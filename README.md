@@ -2,5 +2,7 @@
 발표용 깃허브 io 를 사용하기 위한 레포
 
 - 공개 주소: https://2026-codyssey-final-proj.github.io/Floe-open-index/
-- 내용: Floe 본선 발표 덱 — 2026 대전 창업 One 클럽 AI 바이브코딩 아이디어 경진대회 (F 전체화면 · S 발표자 창 · ← → 넘김)
-- 원본: `Floe-Idea-Contest` 저장소의 `04-대전One-창업아이디어-경진대회/index.html` + `공통/덱/` (빌드: `python3 -I 공통/build.py`). 여기 파일은 사본이니 원본을 고친 뒤 다시 복사합니다. 사본에서는 HTML · CSS 주석을 지웁니다.
+- 내용: Floe 최종 발표 덱 — 10분 · 19장 (F 전체화면 · S 발표자 창 · ← → 넘김, 17장은 → 6번)
+- 원본: `Final-Proj` 저장소의 `01-docs/04-pattern-implementation/presentation-10min/index.html`(main 최종본, PR #385)을
+  2026-11-12 최종 발표문 기준으로 다시 만들었다. 화면 글은 줄이고, 발표자 메모(S)는 발표문 그대로. 그림 · 영상 · 스타일은 `deck/`에 있다.
+- 배포: `main` 또는 `gamercross/발표용-홈페이지-제작`에 푸시하면 GitHub Actions(`.github/workflows/pages.yml`)가 저장소 루트를 Pages로 올린다.

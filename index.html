@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-
+<!-- 2026-11-12 — 최종 발표문(11/12 리허설 반영, 부록 제외)을 바탕으로 다시 만들었다. 원본: Final-Proj presentation-10min(main 최종본, 19장). 화면 글은 줄이고, 발표자 메모(S 키)는 발표문 그대로. 나눔: 1 ~ 10장 두승현 · 11 ~ 19장 이재엽. -->
 <html lang="ko">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Floe 본선 발표 — 대전 창업 One 클럽 (7분판)</title>
+<title>Floe 최종 발표 — 10분 · 19장</title>
 <link rel="stylesheet" href="deck/assets/fonts.css">
 <link rel="stylesheet" href="deck/assets/base.css">
 <link rel="stylesheet" id="theme-link" href="deck/assets/themes/arctic-cool.css">
@@ -12,7 +12,7 @@
 <link rel="stylesheet" href="deck/seal.css">
 <style>
 :root{--font-sans:'Inter','Noto Sans KR','Apple SD Gothic Neo','Malgun Gothic','Noto Sans SC',sans-serif}
-
+/* 틀 — 제목 띠는 위에 고정, 본문은 남은 자리의 가운데에 */
 .tpl-presenter-mode-reveal .slide{justify-content:center;padding:200px 90px 90px}
 .tpl-presenter-mode-reveal .slide:not(.center)>.hd{position:absolute;top:0;left:0;right:0;margin:0;padding:40px 90px 22px;background:color-mix(in srgb,var(--accent) 8%,var(--bg));border-bottom:3px solid var(--accent)}
 .tpl-presenter-mode-reveal .slide.center{justify-content:center;padding:60px 90px 80px}
@@ -37,7 +37,7 @@
 .chip.bad{background:color-mix(in srgb,var(--bad) 10%,var(--surface));border-color:color-mix(in srgb,var(--bad) 40%,var(--border));color:var(--bad)}
 .hl-box{border:2px solid var(--accent);background:color-mix(in srgb,var(--accent) 8%,var(--surface));border-radius:var(--radius);padding:22px 30px;font-size:28px;font-weight:700;color:var(--text-1);line-height:1.45}
 .hl-box b{color:var(--accent)}
-
+/* 가로 막대 — 너비 = 값 ÷ 축 최댓값(축은 0부터) */
 .hb{display:grid;grid-template-columns:1fr 96px;align-items:center;gap:6px 16px;margin:14px 0}
 .hb .lb{grid-column:1/-1;font-size:21px;color:var(--text-1);line-height:1.3}
 .hb .tr{height:30px;border-radius:8px;background:color-mix(in srgb,var(--text-3) 14%,var(--bg))}
@@ -45,7 +45,7 @@
 .hb .v{font-size:30px;font-weight:800;color:var(--accent);text-align:right}
 .hb.bad .bf{background:var(--bad)}.hb.bad .v,.hb.bad .lb{color:var(--bad)}.hb.bad .lb{font-weight:700}
 .hb.gray .bf{background:var(--accent-3)}.hb.gray .v{color:var(--accent-3)}
-
+/* 큰 가로 막대(라벨 왼쪽) */
 .bar2{display:grid;grid-template-columns:250px 1fr;align-items:center;gap:24px;margin:20px 0}
 .bar2 .lab{font-size:25px;font-weight:700;color:var(--text-1);line-height:1.25}
 .bar2 .lab small{display:block;font-size:18px;font-weight:500;color:var(--text-3)}
@@ -54,14 +54,14 @@
 .bar2 .bf.gray{background:var(--accent-3)}
 .bar2 .bf.est{background:repeating-linear-gradient(135deg,var(--warn) 0 14px,color-mix(in srgb,var(--warn) 70%,#fff) 14px 28px)}
 .bar2 .out{position:absolute;top:50%;transform:translateY(-50%);font-size:24px;font-weight:700;color:var(--text-2);padding-left:14px;white-space:nowrap}
-
+/* 33명 와플 — 점 하나가 한 사람 */
 .waffle{display:grid;grid-template-columns:repeat(11,1fr);gap:10px;max-width:560px}
 .waffle i{aspect-ratio:1;border-radius:50%;background:var(--accent-3);display:block}
 .waffle i.ok{background:var(--accent)}.waffle i.no{background:var(--bad)}.waffle i.na{background:color-mix(in srgb,var(--text-3) 25%,var(--bg))}
 .wlegend{display:flex;gap:24px;flex-wrap:wrap;font-size:20px;color:var(--text-2);margin-top:18px}
 .wlegend b{font-size:26px}
 .wlegend i{display:inline-block;width:16px;height:16px;border-radius:50%;margin-right:8px;vertical-align:1px}
-
+/* 세로 막대 */
 .vchart{position:relative;display:flex;align-items:flex-end;gap:56px;height:420px;padding:0 40px;border-bottom:3px solid var(--text-2)}
 .vchart .gl{position:absolute;left:0;right:0;border-top:1px dashed var(--border-strong,#c9d6e4)}
 .vchart .gl span{position:absolute;left:-34px;top:-11px;font-size:16px;color:var(--text-3)}
@@ -71,14 +71,14 @@
 .vchart .bar.bad .bf{background:var(--bad)}.vchart .bar.bad .val{color:var(--bad)}
 .vlabels{display:flex;gap:56px;padding:0 40px}
 .vlabels div{flex:1;text-align:center;font-size:23px;font-weight:700;margin-top:14px;color:var(--text-1)}
-
+/* 실제 화면 */
 .shots{display:grid;grid-template-columns:repeat(3,1fr);gap:28px}
 .shot .img-frame{aspect-ratio:1/0.82;border-radius:16px;box-shadow:var(--shadow-lg);border:1px solid var(--border)}
 .shot .img-frame img{object-fit:cover;object-position:var(--pos,center top);transform:scale(var(--z,1));transform-origin:var(--o,center top)}
 .shot h4{font-size:27px;margin:18px 0 6px;color:var(--text-1)}
 .shot .no{display:inline-grid;place-items:center;width:38px;height:38px;border-radius:50%;background:var(--accent);color:#fff;font-size:20px;margin-right:10px;vertical-align:3px}
 .shot p{font-size:22px;color:var(--text-2);margin:0;line-height:1.4}
-
+/* 화면이 붙은 흐름 */
 .sflow{display:grid;grid-template-columns:1fr 34px 1fr 34px 1fr 34px 1fr 34px 1fr;align-items:start}
 .sflow .arr{align-self:center;text-align:center;font-size:30px;color:var(--text-3);margin-top:-60px}
 .sflow .st{display:flex;flex-direction:column}
@@ -89,7 +89,7 @@
 .sflow p{font-size:19px;color:var(--text-2);margin:0;line-height:1.4;word-break:keep-all}
 .actor{display:inline-block;margin-top:10px;padding:4px 14px;border-radius:999px;font-size:17px;font-weight:800;color:#fff;background:var(--accent);align-self:flex-start}
 .actor.ai{background:var(--accent-2)}.actor.code{background:var(--accent-3)}.actor.me{background:var(--good)}
-
+/* 문제 → Floe */
 .fix{display:grid;grid-template-columns:repeat(3,1fr);gap:28px}
 .fix .q2{font-size:27px;font-weight:800;color:var(--bad);margin:0 0 12px}
 .fix .q2::before{content:"?";display:inline-grid;place-items:center;width:38px;height:38px;border-radius:50%;background:color-mix(in srgb,var(--bad) 14%,transparent);margin-right:10px;font-size:22px;vertical-align:2px}
@@ -97,7 +97,7 @@
 .fix .img-frame img{object-fit:cover;object-position:var(--pos,center top);transform:scale(var(--z,1));transform-origin:var(--o,center top)}
 .fix .a2{font-size:24px;color:var(--text-1);margin:14px 0 0;font-weight:700}
 .fix .a2 b{color:var(--accent)}
-
+/* 영상 */
 .fig{display:flex;flex-direction:column;align-items:center;min-height:0}
 .fig .img-frame{aspect-ratio:16/9;width:min(1240px,100%)}
 .fig video{width:100%;height:100%;object-fit:contain;background:#000;border-radius:var(--radius)}
@@ -109,14 +109,14 @@
 .chap em{font-style:normal;font-family:var(--font-mono,monospace);font-size:15px;color:var(--accent);font-weight:700}
 .demo{display:grid;grid-template-columns:1fr;justify-items:center}
 .demo .img-frame{width:auto;height:570px;aspect-ratio:16/9;max-width:100%}
-
+/* 결과 화면 둘 */
 .pair{display:grid;grid-template-columns:1fr 1fr;gap:22px}
 .pair figure{margin:0}
 .pair .img-frame{aspect-ratio:1/0.62;border-radius:12px;border:1px solid var(--border);box-shadow:var(--shadow)}
 .pair .img-frame img{object-fit:cover;object-position:center top}
 .pair figcaption{font-size:20px;font-weight:700;margin-top:10px;color:var(--text-1)}
 .pair figcaption .ok{color:var(--good);margin-left:8px}
-
+/* 빈칸 상자 */
 .emptybox{padding:20px 24px;border-radius:12px;border:2px dashed var(--warn);background:var(--surface-2);font-family:var(--font-mono,monospace);font-size:22px;line-height:1.7;color:var(--text-2)}
 .emptybox em{font-style:normal;color:var(--warn);font-weight:700}
 .miss{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:16px;font-size:25px;line-height:1.4}
@@ -126,7 +126,7 @@
 .floro-say .ic{width:72px;height:72px;flex:none}
 .floro-say .ic svg{width:100%;height:100%}
 .floro-say p{margin:0;font-size:24px;font-weight:700;color:var(--text-1)}
-
+/* 목표가 있는 막대 */
 .meter{display:grid;grid-template-columns:400px 1fr 130px;align-items:center;gap:26px;margin:30px 0}
 .meter .lab{font-size:24px;font-weight:700;color:var(--text-1)}
 .meter .track{position:relative;height:46px;background:var(--surface-2);border:1px solid var(--border);border-radius:23px}
@@ -136,11 +136,11 @@
 .meter .goal span{position:absolute;top:-30px;left:50%;transform:translateX(-50%);font-size:17px;font-weight:700;color:var(--warn);white-space:nowrap}
 .meter .num{font-size:36px;font-weight:800;color:var(--text-1);text-align:right}
 .blank{display:inline-block;min-width:1.4em;border-bottom:3px solid var(--warn);text-align:center;color:var(--warn)}
-
+/* 숫자 */
 .stat .n{font-size:64px;font-weight:800;letter-spacing:-.02em;color:var(--accent);line-height:1}
 .stat .l{font-size:22px;color:var(--text-1);margin-top:10px;font-weight:700}
 .stat .d{font-size:17px;color:var(--text-3);margin-top:4px}
-
+/* 타임라인 */
 .tl{position:relative;margin-top:10px}
 .tl::before{content:"";position:absolute;left:0;right:0;top:50px;height:3px;background:var(--border)}
 .tl .row{display:grid;gap:22px;align-items:start}
@@ -150,7 +150,7 @@
 .tl .year{font-size:19px;color:var(--text-3);position:absolute;top:0;left:0;font-weight:700}
 .tl h4{font-size:26px;margin:0 0 6px}
 .tl p{font-size:20px;color:var(--text-2);margin:0;word-break:keep-all}
-
+/* 사람별 카드 */
 .g4{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
 .pcard h4{font-size:30px!important;margin-bottom:4px!important}
 .pcard .role{font-size:20px;color:var(--text-2);line-height:1.4;margin:0}
@@ -160,23 +160,23 @@
 .pcard .nums span{font-size:16px;color:var(--text-3)}
 .pcard ul{margin:0;padding-left:1em;font-size:19px;line-height:1.6}
 .pcard .key{font-family:var(--font-mono,monospace);font-size:15px;color:var(--accent);white-space:nowrap}
-
+/* 몫 막대(전체 중 얼마) */
 .frac{margin:22px 0}
 .frac .top{display:flex;justify-content:space-between;align-items:baseline;font-size:23px;font-weight:700;color:var(--text-1);margin-bottom:8px}
 .frac .top b{font-size:34px;color:var(--accent)}
 .frac .top small{font-size:18px;color:var(--text-3);font-weight:500}
 .frac .tr{height:34px;border-radius:8px;background:color-mix(in srgb,var(--text-3) 14%,var(--bg));overflow:hidden}
 .frac .bf{height:100%;background:var(--accent)}
-
+/* 표 */
 .t{width:100%;border-collapse:collapse;font-size:20px}
 .t th,.t td{padding:12px 16px;text-align:left;border-bottom:1px solid var(--border);vertical-align:top}
 .t th{font-size:16px;color:var(--text-3);font-weight:600}
 .t td:first-child{white-space:nowrap;font-weight:600}
-
+/* 막힐 때 */
 .rows{display:grid;gap:14px}
 .rows .r{display:grid;grid-template-columns:1fr 60px 1.2fr;align-items:center;background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:20px 30px;box-shadow:var(--shadow)}
 .rows .a{font-size:27px;color:var(--text-2)}.rows .arr{font-size:28px;color:var(--text-3);text-align:center}.rows .b{font-size:27px;font-weight:700;color:var(--accent)}
-
+/* 구조 */
 .flow{display:flex;align-items:stretch;gap:14px}
 .flow .node{flex:1;background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:24px 14px;text-align:center;box-shadow:var(--shadow)}
 .flow .node h4{margin:0 0 8px;font-size:25px}
@@ -187,22 +187,20 @@
 .zone{position:relative;border:3px dashed var(--accent);border-radius:22px;padding:46px 22px 22px;background:color-mix(in srgb,var(--accent) 5%,transparent)}
 .zone .tag{position:absolute;top:-19px;left:26px;background:var(--accent);color:#fff;font-size:19px;font-weight:700;padding:5px 16px;border-radius:999px}
 .zone.out{border-color:var(--text-3);background:transparent}.zone.out .tag{background:var(--text-3)}
-
-.cover-row{display:grid;grid-template-columns:auto 520px;gap:110px;align-items:center;text-align:left}
-#floro{width:520px;height:520px;padding:40px;border-radius:110px;background:linear-gradient(160deg,#4D66B5 0%,#2B3463 60%,#1A2350 100%);box-shadow:var(--shadow-lg)}
+/* 표지 */
+.cover-row{display:grid;grid-template-columns:auto 340px;gap:120px;align-items:center;text-align:left}
+#floro{width:340px;height:340px;padding:26px;border-radius:72px;background:linear-gradient(160deg,#4D66B5 0%,#2B3463 60%,#1A2350 100%);box-shadow:var(--shadow-lg)}
 #floro svg.cat{width:100%;height:100%;overflow:visible}
 #floro .cat,#floro .cat *{animation:none!important}
-#peek{position:absolute;left:50%;bottom:-6px;width:320px;height:320px;transform:translate(-50%,110%);pointer-events:none}
+#peek{position:absolute;left:50%;bottom:-6px;width:230px;height:230px;transform:translate(-50%,110%);pointer-events:none}
 #peek svg.cat{width:100%;height:100%}
-.slide[data-title="표지"] .h1{font-size:112px;line-height:1.12;margin-bottom:34px;white-space:nowrap}
-.slide[data-title="표지"] .lede{font-size:42px;line-height:1.45;max-width:none}
 #floro.nofloro{background:url(deck/shots/mascot-v1.webp) center/80% no-repeat,linear-gradient(160deg,#4D66B5 0%,#2B3463 60%,#1A2350 100%)}
 body{align-items:flex-start}.deck{transform-origin:center top}
-
+/* 글자 크기 — + / − / 0 */
 .slide>:not(.deck-footer):not(.notes):not(.hd){zoom:var(--zoom,1)}
 #zoom-tip{position:fixed;top:16px;right:16px;padding:8px 14px;border-radius:999px;background:var(--text-1);color:var(--bg);font-size:14px;font-weight:600;z-index:200;opacity:0;transition:opacity .25s;pointer-events:none}
 #zoom-tip.on{opacity:1}
-
+/* 2 · 3장 — 두승현 2026-11-07: 쓴다 · 믿는다를 큰 막대 두 장으로(축 60% · 20%부터 — 축 시작은 그래프에 적음), 아래에 요약 상자 */
 .two .chart{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);box-shadow:var(--shadow);width:min(1500px,100%);margin:0 auto;padding:30px 56px 26px}
 .two .chart h4{margin:0 0 6px;font-size:34px;display:flex;align-items:center;gap:14px}
 .two .chart .q{font-size:19px;color:var(--text-3);margin:0 0 14px}
@@ -221,7 +219,7 @@ body{align-items:flex-start}.deck{transform-origin:center top}
 .two .box{border:1px solid var(--accent);border-radius:var(--radius);padding:22px 28px;background:color-mix(in srgb,var(--accent) 10%,var(--surface));font-size:28px;color:var(--text-1);line-height:1.5}
 .two .src{font-size:18px;color:var(--text-3);margin:14px auto 0;width:min(1500px,100%)}
 
-
+/* ── 여덟째 판(2026-11-07 이재엽 요청) ── */
 .why3{display:grid;gap:22px}
 .why3 .w{display:grid;grid-template-columns:250px 0.95fr 1.15fr;align-items:center;gap:26px;padding:18px 24px;border-radius:var(--radius);background:var(--surface);border:1px solid var(--border);box-shadow:var(--shadow)}
 .why3 .w.best{border:2px solid var(--good);box-shadow:0 0 0 4px color-mix(in srgb,var(--good) 15%,transparent),var(--shadow)}
@@ -235,7 +233,7 @@ body{align-items:flex-start}.deck{transform-origin:center top}
 .why3 .note{font-size:21px;line-height:1.45;color:var(--text-1)}
 .tag2{display:inline-block;font-size:16px;font-weight:800;padding:3px 12px;border-radius:999px;color:#fff;margin-right:10px;vertical-align:2px}
 .tag2.bad{background:var(--bad)}.tag2.warn{background:var(--warn)}.tag2.ok{background:var(--good)}
-
+/* 책 */
 .bookwrap{display:grid;grid-template-columns:330px 1fr;gap:46px;align-items:center}
 .steps3{display:flex;flex-direction:column;gap:0}
 .steps3 .s{border-radius:16px;padding:20px 22px;background:var(--surface);border:1px solid var(--border);box-shadow:var(--shadow)}
@@ -253,7 +251,7 @@ body{align-items:flex-start}.deck{transform-origin:center top}
 .book .img-frame img{object-fit:cover;object-position:var(--pos,center top);transform:scale(var(--z,1));transform-origin:var(--o,center top)}
 .book .cap3{font-size:16px;color:#6b5a36;margin:0}
 .book .ribbon{position:absolute;top:-14px;right:60px;background:var(--bad);color:#fff;font-size:15px;font-weight:800;padding:6px 12px 10px;border-radius:0 0 6px 6px}
-
+/* 협업 투어 */
 .tour{display:flex;flex-direction:column;gap:18px}
 .tour .rail{display:grid;grid-template-columns:repeat(6,1fr);gap:10px;position:relative}
 .tour .rail::before{content:"";position:absolute;left:4%;right:4%;top:19px;height:3px;background:var(--border)}
@@ -288,7 +286,7 @@ body{align-items:flex-start}.deck{transform-origin:center top}
 .tour .k{display:inline-block;font-family:var(--font-mono,monospace);font-size:16px;font-weight:700;color:var(--accent);background:color-mix(in srgb,var(--accent) 10%,var(--surface));border:1px solid color-mix(in srgb,var(--accent) 30%,transparent);padding:1px 8px;border-radius:6px;margin-left:6px;white-space:nowrap}
 .tour .k.v{color:var(--good);background:color-mix(in srgb,var(--good) 10%,var(--surface));border-color:color-mix(in srgb,var(--good) 35%,transparent)}
 .tour .c2.next{background:repeating-linear-gradient(135deg,var(--surface) 0 18px,var(--surface-2) 18px 36px)}
-
+/* 사업 표 */
 .biz{width:100%;border-collapse:separate;border-spacing:0;font-size:19px;background:var(--surface);border:1px solid var(--border);border-radius:14px;overflow:hidden;box-shadow:var(--shadow)}
 .biz th{background:color-mix(in srgb,var(--accent) 10%,var(--surface));font-size:16px;color:var(--text-2);text-align:left;padding:10px 14px;font-weight:800}
 .biz td{padding:12px 14px;border-top:1px solid var(--border);vertical-align:top;line-height:1.4;color:var(--text-1)}
@@ -297,7 +295,7 @@ body{align-items:flex-start}.deck{transform-origin:center top}
 .biz .gate{display:inline-grid;place-items:center;width:30px;height:30px;border-radius:50%;background:var(--accent);color:#fff;font-size:16px;margin-right:8px}
 .biz-h{font-size:19px;font-weight:800;color:var(--text-2);margin:0 0 8px}
 
-
+/* 아홉째 판 — 12장 리포트 vs 앱, 14장 목적마다 */
 .rva{display:grid;grid-template-columns:1fr 1fr;gap:34px}
 .rva .col{display:flex;flex-direction:column;gap:12px;padding:20px 22px;border-radius:18px;background:var(--surface);border:1px solid var(--border);box-shadow:var(--shadow)}
 .rva .col.best{border:3px solid var(--good);box-shadow:0 0 0 5px color-mix(in srgb,var(--good) 14%,transparent),var(--shadow)}
@@ -337,7 +335,7 @@ body{align-items:flex-start}.deck{transform-origin:center top}
 .collab2 .tour .c2 .stg{display:inline-block;margin:0 0 8px;padding:4px 16px;border-radius:999px;background:var(--accent);color:#fff;font-size:22px;font-weight:800}
 .collab2 .tour .c2.next .stg{background:var(--accent-3)}
 
-
+/* ── 이재엽 장(12 · 13 · 15 · 16) 움직임 — 장이 보일 때마다 처음부터. 자세히 보이고 비교가 되도록(2026-11-08) ── */
 .rva{position:relative}
 .rva .vs{position:absolute;left:50%;top:44%;transform:translate(-50%,-50%);width:86px;height:86px;border-radius:50%;display:grid;place-items:center;background:var(--text-1);color:#fff;font-size:30px;font-weight:900;box-shadow:0 8px 24px rgba(14,31,51,.3);z-index:3}
 .book{perspective:1800px}
@@ -358,7 +356,7 @@ body{align-items:flex-start}.deck{transform-origin:center top}
 @keyframes a-ring{0%{box-shadow:0 0 0 0 color-mix(in srgb,var(--accent) 60%,transparent)}100%{box-shadow:0 0 0 16px transparent}}
 @keyframes a-zoomin{from{opacity:0;transform:scale(.92);filter:blur(6px)}to{opacity:1;transform:none;filter:none}}
 @media (prefers-reduced-motion: no-preference){
-  
+  /* 12 — 왼쪽(리포트)을 먼저 훑고 → VS → 오른쪽(앱)을 훑고 → 왼쪽은 흐리게, 오른쪽은 빛나게 → 결론 */
   .slide.is-active[data-title="결과 비교"] .rva .col:not(.best){animation:a-inL .7s cubic-bezier(.2,.8,.2,1) both .2s, a-dim .8s ease forwards 6.4s}
   .slide.is-active[data-title="결과 비교"] .rva .col:not(.best) .img-frame img{transform:none;animation:a-pan 4.2s ease-in-out both .9s}
   .slide.is-active[data-title="결과 비교"] .rva .col:not(.best) .tag2{display:inline-block;animation:a-pop .45s both 2.4s}
@@ -367,7 +365,7 @@ body{align-items:flex-start}.deck{transform-origin:center top}
   .slide.is-active[data-title="결과 비교"] .rva .col.best .img-frame img{transform:none;animation:a-pan 4.2s ease-in-out both 4.1s}
   .slide.is-active[data-title="결과 비교"] .rva .col.best .tag2{display:inline-block;animation:a-pop .45s both 5.6s}
   .slide.is-active[data-title="결과 비교"] > .say{animation:a-up .6s both 7.2s}
-  
+  /* 13 — 세 단계가 차례로 → 책이 펼쳐지고 → 책갈피 → 페이지 그림을 하나씩 들여다봄 */
   .slide.is-active[data-title="책"] .steps3 > :nth-child(1){animation:a-up .5s both .2s}
   .slide.is-active[data-title="책"] .steps3 > :nth-child(2){animation:a-up .4s both .6s}
   .slide.is-active[data-title="책"] .steps3 > :nth-child(3){animation:a-up .5s both .9s}
@@ -376,7 +374,7 @@ body{align-items:flex-start}.deck{transform-origin:center top}
   .slide.is-active[data-title="책"] .book{animation:a-zoomin .6s both 2.1s}
   .slide.is-active[data-title="책"] .book.spread .img-frame{animation:a-zoomin .8s both 2.5s}
   .slide.is-active[data-title="책"] .book .ribbon{animation:a-drop .5s cubic-bezier(.2,.8,.2,1) both 3.3s}
-  
+  /* 15 — 누구에게: 두 줄을 차례로, 비용 칸에 형광펜 → 관문: 한 줄씩, 번호가 울리고 목적 칸에 형광펜 */
   .slide.is-active[data-title="사업 계획"] .biz td.goal{background-image:linear-gradient(color-mix(in srgb,var(--warn) 26%,transparent),color-mix(in srgb,var(--warn) 26%,transparent));background-repeat:no-repeat;background-size:0% 100%}
   .slide.is-active[data-title="사업 계획"] > .biz-h:nth-of-type(1){animation:a-up .4s both .1s}
   .slide.is-active[data-title="사업 계획"] .biz:nth-of-type(1) tbody tr:nth-child(1){animation:a-row .55s both .5s}
@@ -394,38 +392,40 @@ body{align-items:flex-start}.deck{transform-origin:center top}
   .slide.is-active[data-title="사업 계획"] .biz:nth-of-type(2) tbody tr:nth-child(2) td.goal{animation:a-mark .6s ease-out forwards 4.9s}
   .slide.is-active[data-title="사업 계획"] .biz:nth-of-type(2) tbody tr:nth-child(3) td.goal{animation:a-mark .6s ease-out forwards 5.9s}
   .slide.is-active[data-title="사업 계획"] > .src{animation:a-up .4s both 6.4s}
-  
+  /* 16 — 한 문장이 또렷해지고 → 나머지가 차례로 */
   .slide.is-active[data-title="마무리"] .h1{animation:a-zoomin 1.1s cubic-bezier(.2,.8,.2,1) both .3s}
   .slide.is-active[data-title="마무리"] .lede{animation:a-up .6s both 1.6s}
   .slide.is-active[data-title="마무리"] .dim{animation:a-up .6s both 2.3s}
 }
-
+/* 4 · 5 · 6장 설문 — 같은 틀: 너비 1300 · 패널 높이 같게(두승현 2026-11-07) */
 .survey-panel{grid-template-columns:1fr;width:min(1300px,100%);margin:0 auto}
 .survey-panel .panel{min-height:580px;display:flex;flex-direction:column}
-.survey-panel .hb{flex:1;align-content:center;margin:8px 0}   
+.survey-panel .hb{flex:1;align-content:center;margin:8px 0}   /* 막대가 패널 높이를 고르게 나눠 가짐 */
 .survey-src{width:min(1300px,100%);margin:14px auto 0}
 .survey-box{width:min(1300px,100%);margin:22px auto 0}
 .survey-panel .waffle{max-width:none;width:880px;gap:16px;margin:auto 0 6px}
 .survey-panel .wlegend{font-size:24px;margin-top:22px}
 .survey-panel .wlegend b{font-size:32px}
 .q2 .pct{font-size:.62em;font-weight:600;color:var(--text-3);margin-left:10px;white-space:nowrap}
-
+/* 7 ~ 9장 기존 문제 → 플로로 해결(두승현 2026-11-08) */
 .pv{display:grid;grid-template-columns:0.72fr 56px 1.9fr;gap:16px;align-items:stretch;width:min(1700px,100%);margin:0 auto}
 .pv .panel{display:flex;flex-direction:column;min-height:716px;overflow:hidden;padding:26px 30px}
-.pv .tag{display:block;align-self:stretch;margin:-26px -30px 20px;padding:14px 20px;border-radius:var(--radius) var(--radius) 0 0;font-size:26px;font-weight:800;text-align:center;color:#fff;background:var(--accent)}   
+.pv .tag{display:block;align-self:stretch;margin:-26px -30px 20px;padding:14px 20px;border-radius:var(--radius) var(--radius) 0 0;font-size:26px;font-weight:800;text-align:center;color:#fff;background:var(--accent)}   /* 칸 위를 가로지르는 큰 띠 */
 .pv .tag.bad{background:var(--bad)}
 .pv .q2{font-size:32px;font-weight:800;color:var(--text-1);margin:0 0 14px}
 .pv .stat{font-size:24px;color:var(--bad);margin:0 0 18px;line-height:1.4}
 .pv .plain{font-size:22px;line-height:1.6;color:var(--text-2);margin:18px 0 0;padding-left:1.1em}
 .pv-prob .q2{margin-top:auto}
-.pv-prob .plain{margin-bottom:auto}   
+.pv-prob .plain{margin-bottom:auto}   /* 태그는 위에(오른쪽 칸과 같은 자리), 나머지는 가운데 */
+.pv-prob .stat:last-child{margin-bottom:auto}.pv-prob .q2{font-size:40px}.pv-prob .stat{font-size:30px}   /* 글을 줄인 뒤: 문제 칸은 질문 · 숫자만 가운데 크게 */
+.pv-sol .mk{margin-top:auto}.pv-sol .a2:last-child{margin-bottom:auto;font-size:30px}   /* 해결 칸도 가운데 */
 .pv-sol .plain{margin-top:12px}
 .pv-arrow{display:grid;place-items:center;font-size:56px;font-weight:800;color:var(--accent)}
 .pv .img-frame{aspect-ratio:auto;height:440px;border-radius:14px;box-shadow:var(--shadow);border:1px solid var(--border)}
 .pv .img-frame img{object-fit:cover;object-position:var(--pos,center top);transform:scale(var(--z,1));transform-origin:var(--o,center top)}
 .pv .a2{font-size:26px;color:var(--text-1);margin:14px 0 0;font-weight:700}
 .pv .a2 b{color:var(--accent)}
-
+/* 7 ~ 9장 플로로 화면 흉내(HTML) — 앱 색: 섬 #363E62 · 글 #2B3463 · 강조 #4D66B5 · 바탕 #E9EEF6 (두승현 2026-11-08, 캡처 대신) */
 .mk{--mi:#2B3463;--ma:#4D66B5;--mb:#C9D0E6;--mm:#7B82A8;background:#EEF1FA;border:1px solid var(--mb);border-radius:14px;padding:18px;font-family:'Inter','Noto Sans KR',sans-serif;color:var(--mi);text-align:left}
 .mk-map{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
 .mcard{display:flex;flex-direction:column;gap:6px;background:#fff;border:2px solid var(--mb);border-radius:14px;padding:12px 14px;min-height:150px}
@@ -456,7 +456,7 @@ body{align-items:flex-start}.deck{transform-origin:center top}
 .mk-book li b{color:var(--mi)}
 .pv .mk{width:100%}
 .pv .mk-quest{width:560px}
-
+/* 11장 대안 비교표(두승현 2026-11-08) */
 .alt{width:min(1700px,100%);margin:0 auto;border-collapse:collapse;font-size:24px;background:var(--surface);border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow)}
 .alt th,.alt td{padding:16px 22px;text-align:left;border-bottom:1px solid var(--border);vertical-align:top;line-height:1.4}
 .alt th{font-size:18px;color:var(--text-3);font-weight:600;background:var(--surface-2)}
@@ -465,7 +465,7 @@ body{align-items:flex-start}.deck{transform-origin:center top}
 .alt td.ok{color:var(--accent);font-weight:700}
 .alt tr.pick td{background:color-mix(in srgb,var(--accent) 8%,var(--surface));border-top:2px solid var(--accent);border-bottom:2px solid var(--accent)}
 .alt tr.pick td b{color:var(--accent)}
-
+/* 12장 큰 구조 도식(두승현 2026-11-08, 캡처 대신) */
 .cyc{display:grid;grid-template-columns:1fr 44px 1fr 44px 340px 44px 1fr 44px 1fr;gap:10px;align-items:center;width:min(1700px,100%);margin:0 auto}
 .cyc .cn{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:22px 20px;text-align:center;box-shadow:var(--shadow);min-height:250px;display:flex;flex-direction:column;justify-content:center;align-items:center}
 .cyc .cn .ic{display:grid;place-items:center;width:52px;height:52px;border-radius:50%;background:color-mix(in srgb,var(--accent) 12%,var(--surface));color:var(--accent);font-size:26px;font-weight:800;margin-bottom:12px}
@@ -485,7 +485,7 @@ body{align-items:flex-start}.deck{transform-origin:center top}
 .cyc-back svg{display:block;width:100%;height:70px}
 .cyc-back p{margin:-4px 0 0;text-align:center;font-size:21px;color:var(--text-2)}
 .cyc-back p b{color:var(--accent)}
-
+/* 13장 한 단계 — 누가 무엇을: 줄은 역할(AI · 사람 · 코드 · 기록), 칸은 순서(두승현 2026-11-08) */
 .lane{display:grid;grid-template-columns:170px repeat(4,1fr 34px) 1fr;gap:10px 0;align-items:stretch;width:min(1700px,100%);margin:0 auto}
 .lane .ls{font-size:24px;font-weight:800;color:var(--text-1);text-align:center;padding:6px 0 4px}
 .lane .ls b{display:inline-grid;place-items:center;width:34px;height:34px;border-radius:50%;background:var(--accent);color:#fff;font-size:18px;margin-right:8px;vertical-align:3px}
@@ -501,7 +501,7 @@ body{align-items:flex-start}.deck{transform-origin:center top}
 .lane .lc.ai{border-color:#2B6CB0;background:color-mix(in srgb,#2B6CB0 8%,var(--surface));color:var(--text-1)}
 .lane .lc.hu{border-color:#B7791F;background:color-mix(in srgb,#B7791F 10%,var(--surface));color:var(--text-1);font-weight:700}
 .lane .lc.cd{border-color:#2F855A;background:color-mix(in srgb,#2F855A 8%,var(--surface));color:var(--text-1)}
-
+/* 5장 점 그래프 다듬기(두승현 2026-11-08): 점은 왼쪽에 크게, 오른쪽에 큰 숫자 */
 .wrow{display:flex;align-items:center;gap:48px;margin:auto 0}
 .wleft{flex:1;min-width:0}
 .survey-panel .wrow .waffle{width:100%;max-width:none;gap:14px;margin:0 0 22px}
@@ -512,14 +512,14 @@ body{align-items:flex-start}.deck{transform-origin:center top}
 .wsum b{display:block;font-size:110px;line-height:1;font-weight:800;color:var(--bad);letter-spacing:-.03em}
 .wsum span{display:block;margin-top:14px;font-size:24px;line-height:1.45;color:var(--text-2)}
 .wsum span strong{color:var(--bad)}
-
+/* 1 ~ 13장 움직임(두승현 2026-11-08 · 11-08 밤 더 빠르게: 간격 ×0.55 · 길이 ×0.8) — 장이 열릴 때 한 번, 줄이기 설정이면 안 함. 표지(1장)는 기존 연출 그대로 */
 @keyframes a-grow{from{transform:scaleY(0)}to{transform:scaleY(1)}}
 @keyframes a-wide{from{transform:scaleX(0)}to{transform:scaleX(1)}}
 @keyframes a-dot{0%{opacity:0;transform:scale(.3)}70%{opacity:1;transform:scale(1.15)}100%{opacity:1;transform:scale(1)}}
 @keyframes a-dash{to{stroke-dashoffset:0}}
 @keyframes a-sbpop{0%{opacity:0;transform:translate(calc(-50% + var(--x)),calc(-50% + var(--y))) scale(.4)}70%{opacity:1;transform:translate(calc(-50% + var(--x)),calc(-50% + var(--y))) scale(1.12)}100%{opacity:1;transform:translate(calc(-50% + var(--x)),calc(-50% + var(--y))) scale(1)}}
 @media (prefers-reduced-motion: no-preference){
-  
+  /* 2 · 3 — 막대가 바닥에서 자라고 → 숫자 · 추세 배지 → 요약 상자 */
   .slide.is-active.two .vbars > div:nth-child(1) .bar{transform-origin:bottom;animation:a-grow 0.56s cubic-bezier(.2, .8, .2, 1) both 0.24s}
   .slide.is-active.two .vbars > div:nth-child(2) .bar{transform-origin:bottom;animation:a-grow 0.56s cubic-bezier(.2, .8, .2, 1) both 0.64s}
   .slide.is-active.two .vbars > div:nth-child(3) .bar{transform-origin:bottom;animation:a-grow 0.56s cubic-bezier(.2, .8, .2, 1) both 1.04s}
@@ -528,7 +528,7 @@ body{align-items:flex-start}.deck{transform-origin:center top}
   .slide.is-active.two .vbars > div:nth-child(3) .v{animation:a-up 0.32s both 0.99s}
   .slide.is-active.two .trend{animation:a-pop 0.4s both 1.16s}
   .slide.is-active.two .box{animation:a-up 0.48s both 1.43s}
-  
+  /* 4 · 6 — 가로 막대가 왼쪽에서 차례로 → 숫자 → 결론 상자 */
   .slide.is-active[data-title="문제 b-1"] .hb:nth-of-type(1) .bf,.slide.is-active[data-title="문제 c"] .hb:nth-of-type(1) .bf{transform-origin:left;animation:a-wide 0.56s cubic-bezier(.2, .8, .2, 1) both 0.24s}
   .slide.is-active[data-title="문제 b-1"] .hb:nth-of-type(2) .bf,.slide.is-active[data-title="문제 c"] .hb:nth-of-type(2) .bf{transform-origin:left;animation:a-wide 0.56s cubic-bezier(.2, .8, .2, 1) both 0.64s}
   .slide.is-active[data-title="문제 b-1"] .hb:nth-of-type(3) .bf,.slide.is-active[data-title="문제 c"] .hb:nth-of-type(3) .bf{transform-origin:left;animation:a-wide 0.56s cubic-bezier(.2, .8, .2, 1) both 1.04s}
@@ -539,7 +539,7 @@ body{align-items:flex-start}.deck{transform-origin:center top}
   .slide.is-active[data-title="문제 b-1"] .hb:nth-of-type(3) .v,.slide.is-active[data-title="문제 c"] .hb:nth-of-type(3) .v{animation-delay:0.99s}
   .slide.is-active[data-title="문제 b-1"] .hb:nth-of-type(4) .v{animation-delay:1.26s}
   .slide.is-active[data-title="문제 c"] .hl-box{animation:a-up 0.48s both 1.32s}
-  
+  /* 5 — 점이 하나씩 켜지고(파랑 → 빨강 → 회색) → 범례 → 큰 숫자 */
   .slide.is-active[data-title="문제 b-2"] .waffle i{animation:a-dot 0.28s both}
   .slide.is-active[data-title="문제 b-2"] .waffle i:nth-child(1){animation-delay:0.17s}
   .slide.is-active[data-title="문제 b-2"] .waffle i:nth-child(2){animation-delay:0.21s}
@@ -576,13 +576,13 @@ body{align-items:flex-start}.deck{transform-origin:center top}
   .slide.is-active[data-title="문제 b-2"] .waffle i:nth-child(33){animation-delay:1.75s}
   .slide.is-active[data-title="문제 b-2"] .wlegend{animation:a-up 0.4s both 1.87s}
   .slide.is-active[data-title="문제 b-2"] .wsum{animation:a-pop 0.56s both 2.09s}
-  
+  /* 7 ~ 9 — 기존 문제가 왼쪽에서 → 화살표 → 플로로의 해결이 오른쪽에서 → 답 문장 */
   .slide.is-active .pv .pv-prob{animation:a-inL 0.48s cubic-bezier(.2, .8, .2, 1) both 0.16s}
   .slide.is-active .pv .pv-arrow{animation:a-pop 0.4s both 0.55s}
   .slide.is-active .pv .pv-sol{animation:a-inR 0.48s cubic-bezier(.2, .8, .2, 1) both 1.04s}
   .slide.is-active .pv .pv-sol .mk{animation:a-zoomin 0.48s both 0.99s}
   .slide.is-active .pv .pv-sol .a2,.slide.is-active .pv .pv-sol .plain{animation:a-up 0.4s both 1.38s}
-  
+  /* 11 — 생각해 본 길이 한 줄씩 → 고른 줄이 울리고 → 까닭 상자 */
   .slide.is-active[data-title="Why"] .alt tbody tr{animation:a-row 0.4s both}
   .slide.is-active[data-title="Why"] .alt tbody tr:nth-child(1){animation-delay:0.17s}
   .slide.is-active[data-title="Why"] .alt tbody tr:nth-child(2){animation-delay:0.5s}
@@ -590,7 +590,7 @@ body{align-items:flex-start}.deck{transform-origin:center top}
   .slide.is-active[data-title="Why"] .alt tbody tr:nth-child(4){animation-delay:1.16s}
   .slide.is-active[data-title="Why"] .alt tbody tr.pick{animation:a-row 0.4s both 1.59s, a-ring 0.96s ease-out 1.93s 2}
   .slide.is-active[data-title="Why"] .hl-box{animation:a-up 0.48s both 2.31s}
-  
+  /* 12 — 다섯 칸이 차례로, 8단계 배지가 돌아가며 켜지고 → 되돌아가는 점선이 그려진다 */
   .slide.is-active[data-title="How ①"] .cyc > .cn:nth-of-type(1){animation:a-up 0.4s both 0.11s}
   .slide.is-active[data-title="How ①"] .cyc > .cn:nth-of-type(2){animation:a-up 0.4s both 0.39s}
   .slide.is-active[data-title="How ①"] .cyc > .cn:nth-of-type(3){animation:a-zoomin 0.48s both 0.66s}
@@ -613,7 +613,7 @@ body{align-items:flex-start}.deck{transform-origin:center top}
   .slide.is-active[data-title="How ①"] .cyc-back svg path:first-child{stroke-dasharray:2400;stroke-dashoffset:2400;animation:a-dash 1.28s ease-in-out forwards 2.59s}
   .slide.is-active[data-title="How ①"] .cyc-back svg path:last-child{animation:a-pop 0.32s both 3.41s}
   .slide.is-active[data-title="How ①"] .cyc-back p{animation:a-up 0.48s both 3.52s}
-  
+  /* 13 — 순서 머리 → 줄 이름 → 칸이 순서대로(①부터 ⑤) → 결론 */
   .slide.is-active[data-title="How ②"] .lane .ls{animation:a-up 0.32s both}
   .slide.is-active[data-title="How ②"] .lane .ll{animation:a-inL 0.4s both 0.11s}
   .slide.is-active[data-title="How ②"] .lane .lc:not(.dim){animation:a-pop 0.4s both}
@@ -625,7 +625,7 @@ body{align-items:flex-start}.deck{transform-origin:center top}
   .slide.is-active[data-title="How ②"] .hl-box{animation:a-up 0.48s both 2.2s}
 }
 
-
+/* 협업 장 — 발전해 가는 느낌: 그때의 앱 화면 · 쌓이는 결과 · 자라는 막대(이재엽 2026-11-08) */
 .collab2 .tour{gap:12px}
 .collab2 .tour .cum{grid-template-columns:1fr 300px;gap:14px}
 .collab2 .tour .cum-l{font-size:17px}
@@ -645,15 +645,15 @@ body{align-items:flex-start}.deck{transform-origin:center top}
 .collab2 .tour .p{padding:12px 18px}
 .collab2 .tour .p .tx{font-size:25px}
 
-
-
+/* ── 이재엽 장 크게 · 여백 줄임 (2026-11-08) ── */
+/* 15 결과 비교 — 화면을 크게 */
 .rva{gap:40px}
 .rva .col{padding:16px 20px;gap:10px}
 .rva .img-frame{aspect-ratio:auto!important;height:610px}
 .rva h4{font-size:32px!important}.rva .ln{font-size:24px!important}
 .rva .vs{top:50%}
 .slide[data-title="결과 비교"] > .say{margin-top:20px!important;font-size:34px!important}
-
+/* 16 책 — 단계는 위 한 줄, 책은 가로 가득 */
 .bookwrap{grid-template-columns:1fr;gap:22px;align-items:stretch}
 .steps3{flex-direction:row;align-items:center;justify-content:center;gap:16px}
 .steps3 .s{display:flex;align-items:center;gap:14px;padding:14px 26px}
@@ -668,20 +668,20 @@ body{align-items:flex-start}.deck{transform-origin:center top}
 .book > .pg:last-of-type .img-frame:first-of-type{aspect-ratio:auto!important;height:330px}
 .book > .pg:last-of-type .img-frame:last-of-type{aspect-ratio:auto!important;height:262px}
 .book .ribbon{font-size:20px;right:80px}
-
+/* 18 사업 계획 — 표를 크게, 위 여백 줄임 */
 .slide[data-title="사업 계획"]{justify-content:flex-start}
 .slide[data-title="사업 계획"] .biz-h{font-size:24px;margin:0 0 10px}
 .biz.big{font-size:31px}.biz.big th{font-size:21px;padding:14px 22px}.biz.big td{padding:22px 22px}
 .biz.big .gate{width:40px;height:40px;font-size:21px;margin-right:12px}
 .slide[data-title="사업 계획"] .src{font-size:19px;margin-top:14px}
-
+/* 19 마무리 — 플로로와 큰 문장 */
 .endw{display:flex;flex-direction:column;align-items:center}
 .endw .endimg{width:300px;height:auto;margin:0 0 18px;filter:drop-shadow(0 18px 30px rgba(14,31,51,.22))}
 .slide[data-title="마무리"] .h1{font-size:84px;line-height:1.2}
 .slide[data-title="마무리"] .lede{font-size:34px!important;max-width:none}
 .slide[data-title="마무리"] .dim{font-size:24px!important}
 @media (prefers-reduced-motion: no-preference){ .slide.is-active[data-title="마무리"] .endimg{animation:a-up .7s both 0s} }
-
+/* 17 협업 — Jira는 처음 한 번, 그다음 단계마다 큰 그림 */
 .collab3 .tour{gap:10px}
 .collab3 .rail{grid-template-columns:repeat(6,1fr)}
 .collab3 .tour .st{flex-direction:row;gap:10px;justify-content:center}
@@ -739,7 +739,7 @@ body{align-items:flex-start}.deck{transform-origin:center top}
   .collab3 .tour .c2.on .big figure:nth-of-type(6){animation-delay:.9s}
 }
 
-
+/* 협업 — 큰 그림 채우기: 넓은 그림은 큰 한 장 + 모서리 작은 장, 긴 그림은 나란히 */
 .collab3 .big.two img{object-fit:cover;object-position:center top}
 .collab3 .big.pip{display:block;position:relative}
 .collab3 .big.pip > figure:first-child{height:100%}
@@ -758,14 +758,14 @@ body{align-items:flex-start}.deck{transform-origin:center top}
 @media (prefers-reduced-motion: no-preference){
   .collab3 .tour .c2.on .big.pip > figure:nth-child(2){animation:a-up .6s both 1s}
 }
-
+/* 마무리 — 투명 플로로 */
 .endw .endimg{width:340px;filter:drop-shadow(0 18px 30px rgba(14,31,51,.18))}
 .collab3 .big.one{grid-template-columns:minmax(0,1fr);grid-template-rows:minmax(0,1fr)}
 .collab3 .big.two{grid-template-columns:minmax(0,1fr) minmax(0,1fr);grid-template-rows:minmax(0,1fr)}
 .collab3 .big.three{grid-template-columns:minmax(0,1fr) 26px minmax(0,1fr) 26px minmax(0,1fr);grid-template-rows:minmax(0,1fr)}
 .collab3 .big.six{grid-template-columns:repeat(3,minmax(0,1fr));grid-template-rows:repeat(2,minmax(0,1fr))}
 .collab3 .big img{width:100%;height:100%}
-
+/* 2026-11-08 둘째 — 16 책은 지금 판 화면 한 장을 펼친 책으로(흐름 · 문서 지도 그림은 앱에서 빠져 뺌), 17 협업은 결과까지 · 누르지 않고 저절로 */
 .book.spread{display:flex;flex-direction:column;gap:14px;padding:26px 34px 30px}
 .book.spread::before{display:none}
 .book.spread .pt{font-size:28px}
@@ -777,7 +777,7 @@ body{align-items:flex-start}.deck{transform-origin:center top}
 .collab3 .big.one.shot1 img{object-fit:cover;object-position:left top}
 .slide[data-title="책"] .bookwrap{margin-top:16px;gap:18px}
 
-
+/* ── 어느 화면에서든 자세히 보이게(2026-11-08) — 작은 글자 키움 · 시연 여섯 장면은 핵심만 확대 ── */
 .rva .tag2{font-size:22px!important;padding:3px 12px}
 .steps3 .s .who3{font-size:19px;padding:3px 14px}
 .collab3 .tour .st b{font-size:20px}
@@ -799,7 +799,7 @@ body{align-items:flex-start}.deck{transform-origin:center top}
 .book.spread .img-frame img{max-height:660px;width:auto;max-width:100%;margin:0 auto}
 .book.spread .img-frame{background:#fff}
 
-
+/* ── 화면 비율 맞춤(2026-11-08) — 16:10(캔버스 1200) · 4:3(1440)에서 늘어난 높이만큼 장을 더 크게 ── */
 body[data-canvas="1200"] .slide[data-title="문제 a-1"]{--zoom:1.3!important}
 body[data-canvas="1200"] .slide[data-title="문제 a-2"]{--zoom:1.3!important}
 body[data-canvas="1200"] .slide[data-title="문제 b-1"]{--zoom:1.5!important}
@@ -838,372 +838,320 @@ body[data-canvas="1200"] .rva .img-frame{height:720px}
 body[data-canvas="1440"] .rva .img-frame{height:930px}
 </style>
 </head>
-<body class="tpl-presenter-mode-reveal" data-fit="fill">
+<body class="tpl-presenter-mode-reveal" data-fit="fill"><!-- 화면 비율에 맞춰 캔버스를 늘리고 모든 크기를 같은 배율로(이재엽 2026-11-07 "길이가 고정된 것이 아니라 상황마다 비율에 맞춰서") -->
 <div class="deck">
 
-
+<!-- 1 표지 -->
 <section class="slide center" data-title="표지">
   <div class="cover-row">
     <div>
       <h1 class="h1"><span class="gradient-text">Floe</span><br>AI와 만드는 프로젝트,<br>길을 잃지 않게</h1>
-      <p class="lede mt-m">지금 어디인지, 다음은 뭔지, 왜 그랬는지를 남기는 길잡이 앱</p>
+      <p class="lede mt-m">바이브코딩 길잡이 앱</p>
     </div>
     <div id="floro" aria-label="길잡이 물범 플로로 — 커서를 따라 봅니다"></div>
   </div>
   <div id="peek" aria-hidden="true"></div>
-  <div class="deck-footer"><span class="who">Floe · 0:30 · 누적 0:30 · 이재엽</span><span class="slide-number" data-current="1" data-total="18"></span></div>
-  <aside class="notes"><p><em>(발표: 이재엽)</em></p><p>안녕하세요, 바이브코딩 길잡이 앱 Floe를 개발한 발표자 이재엽입니다.</p><p>여러분 시대가 참 좋아졌습니다. 앞서 발표된 내용들처럼 요즘은 문서와 구조를 AI에게 말로 시키기만 해도 코드뿐만 아니라 앱까지 만들어 줍니다.</p><p>하지만 바이브 코딩을 하다 보면, 현재 내가 지금 뭘 만들고 있는지 놓친 경험, 한 번쯤 있으실 겁니다.</p><p>그리고 저희가 느낀 이런 경험이 저희만의 이야기는 아니었습니다. 숫자로 먼저 보겠습니다.</p></aside>
+  <div class="deck-footer"><span class="who">Floe · 0:20 · 누적 0:20 · 두승현</span><span class="slide-number" data-current="1" data-total="19"></span></div>
+  <aside class="notes"><p><em>(발표: 두승현 · 0:20 · 누적 0:20)</em></p><p>안녕하세요, Floe를 개발한 8조 발표자 두승현입니다.</p><p>시대가 참 좋아졌습니다. 요즘은 말로 시키기만 해도 AI가 코드를 써 줍니다. 그런데 만들다 보면, 내가 지금 뭘 만들고 있는지 놓친 경험, 한 번쯤 있으실 겁니다.</p><p>Floe는 그 과정에서 <strong>길을 잃지 않게 해 주는 바이브코딩 길잡이 앱</strong>입니다. 그런데 이런 경험이 저희만의 이야기는 아니었습니다. 숫자로 먼저 보겠습니다. ▶</p></aside>
 </section>
 
-
-<section class="slide two" style="--zoom:1.12" data-title="문제 a">
-  <style>
-    .slide[data-title="문제 a"] .pairc{display:grid;grid-template-columns:1fr 1fr;gap:32px;width:min(1700px,100%);margin:0 auto}
-    .slide[data-title="문제 a"] .chart{width:100%;padding:26px 36px 22px}
-    .slide[data-title="문제 a"] .chart h4{font-size:30px}
-    .slide[data-title="문제 a"] .vbars{height:300px;gap:36px;padding:0 20px 0 74px;margin:16px 0 52px}
-    .slide[data-title="문제 a"] .box,.slide[data-title="문제 a"] .src{width:min(1700px,100%)}
-  </style>
-  <header class="hd"><p class="kicker">문제 ① 지금 AI 코딩의 문제</p><h2 class="h2">쓰는 사람은 늘었는데, 결과를 믿는 사람은 줄었습니다</h2></header>
-  <div class="pairc">
-    <div class="chart big">
-      <h4>AI 도구를 쓰거나 쓸 계획이다 <span class="trend up">↑ +14%p</span></h4>
-      <p class="q">응답자 비율 · 2025 Stack Overflow 개발자 설문(응답 약 3만 명) · 축은 60%부터</p>
-      <div class="vbars ax" data-base="60%">
-        <div><span class="v">70%</span><div class="bar" style="height:33%"></div><span class="y">2023</span></div>
-        <div><span class="v">76%</span><div class="bar" style="height:53%"></div><span class="y">2024</span></div>
-        <div class="hl"><span class="v">84%</span><div class="bar" style="height:80%"></div><span class="y">2025</span></div>
-      </div>
-    </div>
-    <div class="chart big bad">
-      <h4>AI 도구의 결과를 믿는다 <span class="trend down">↓ −10%p</span></h4>
-      <p class="q">응답자 비율 · 같은 설문 · 축은 20%부터</p>
-      <div class="vbars ax" data-base="20%">
-        <div><span class="v">43%</span><div class="bar" style="height:77%"></div><span class="y">2024</span></div>
-        <div class="hl"><span class="v">33%</span><div class="bar" style="height:43%"></div><span class="y">2025</span></div>
-      </div>
+<!-- 2 문제 — 쓰는 사람 -->
+<section class="slide two" style="--zoom:1.15" data-title="문제 a-1">
+  <header class="hd"><p class="kicker">문제 ① AI 코딩</p><h2 class="h2">AI로 코딩하는 사람은 늘었습니다</h2></header>
+  <div class="chart big">
+    <h4>AI 도구를 쓰거나 쓸 계획 <span class="trend up">↑ +14%p</span></h4>
+    <p class="q">Stack Overflow 개발자 설문 · 축 60%부터</p>
+    <div class="vbars ax" data-base="60%">
+      <div><span class="v">70%</span><div class="bar" style="height:33%"></div><span class="y">2023</span></div>
+      <div><span class="v">76%</span><div class="bar" style="height:53%"></div><span class="y">2024</span></div>
+      <div class="hl"><span class="v">84%</span><div class="bar" style="height:80%"></div><span class="y">2025</span></div>
     </div>
   </div>
-  <p class="src">Stack Overflow 개발자 설문 2025 (survey.stackoverflow.co/2025/ai) · 두 그래프의 축 시작값이 다릅니다</p>
-  <div class="deck-footer"><span class="who">Floe · 0:22 · 누적 0:52 · 이재엽</span><span class="slide-number" data-current="2" data-total="18"></span></div>
-  <aside class="notes"><p><em>(발표: 이재엽)</em></p><p>이 자료는 전 세계 개발자를 대상으로 한 Stack Overflow 설문입니다. AI 도구를 쓰거나 쓸 계획인 사람이 2년 새 <strong>70%에서 84%</strong>로 늘었습니다.</p><p>그런데요. 결과를 믿는다는 사람은 오히려 <strong>43%에서 33%</strong>로 줄었습니다.</p><p><strong>쓰는 사람은 늘었는데, 믿는 사람은 줄었습니다.</strong> 그럼 저희 주변은 어떨까요?</p></aside>
+  <p class="src">survey.stackoverflow.co/2025/ai</p>
+  <div class="deck-footer"><span class="who">Floe · 0:15 · 누적 0:35 · 두승현</span><span class="slide-number" data-current="2" data-total="19"></span></div>
+  <aside class="notes"><p><em>(발표: 두승현 · 0:15 · 누적 0:35)</em></p><p>(막대) 전 세계 개발자를 대상으로 한 Stack Overflow 설문입니다. AI 도구를 쓰거나 쓸 계획인 사람이 <strong>2년 새 70%에서 84%로</strong> 늘었습니다. 그런데요. ▶</p></aside>
 </section>
 
+<!-- 3 문제 — 믿는 사람 -->
+<section class="slide two" style="--zoom:1.15" data-title="문제 a-2">
+  <header class="hd"><p class="kicker">문제 ① AI 코딩</p><h2 class="h2">결과를 믿는 사람은 줄었습니다</h2></header>
+  <div class="chart big bad">
+    <h4>AI 결과를 믿는다 <span class="trend down">↓ −10%p</span></h4>
+    <p class="q">같은 설문 · 축 20%부터</p>
+    <div class="vbars ax" data-base="20%">
+      <div><span class="v">43%</span><div class="bar" style="height:77%"></div><span class="y">2024</span></div>
+      <div class="hl"><span class="v">33%</span><div class="bar" style="height:43%"></div><span class="y">2025</span></div>
+    </div>
+  </div>
+  <div class="box hl mt-m" style="width:min(1500px,100%);margin-left:auto;margin-right:auto">쓰는 사람은 늘었는데, <b>믿는 사람은 줄었습니다</b></div>
+  <p class="src">survey.stackoverflow.co/2025/ai</p>
+  <div class="deck-footer"><span class="who">Floe · 0:15 · 누적 0:50 · 두승현</span><span class="slide-number" data-current="3" data-total="19"></span></div>
+  <aside class="notes"><p><em>(발표: 두승현 · 0:15 · 누적 0:50)</em></p><p>결과를 믿는다는 사람은 오히려 <strong>43%에서 33%로</strong> 줄었습니다.</p><p><strong>쓰는 사람은 늘었는데, 믿는 사람은 줄었습니다.</strong> 그럼 저희 주변은 어떨까요? ▶</p></aside>
+</section>
 
-<section class="slide" style="--zoom:1.1" data-title="문제 c">
-  <header class="hd"><p class="kicker">문제 ② 설문으로 본 막히는 자리 — 처음 하는 사람 33명</p><h2 class="h2">코드는 나오는데 — '왜'를 설명하지 못하고, '다음'을 모릅니다</h2></header>
+<!-- 4 문제 — 막히는 자리 -->
+<section class="slide" style="--zoom:1.3" data-title="문제 b-1">
+<header class="hd"><p class="kicker">문제 ② 저희가 직접 물었습니다</p><h2 class="h2">처음 하는 사람이 막히는 자리</h2></header>
   <div class="grid survey-panel">
     <div class="panel">
-      <h4>만들고 나서 막힌 자리</h4><p class="q">복수 응답 · 막대 축 0 ~ 100%</p>
-      <div class="hb bad"><div class="lb">만든 것을 끝까지 설명하지 못했다</div><div class="tr"><div class="bf" style="width:73%"></div></div><div class="v">73%</div></div>
-      <div class="hb bad"><div class="lb">다음에 무엇을 해야 할지 몰랐다</div><div class="tr"><div class="bf" style="width:55%"></div></div><div class="v">55%</div></div>
-      <div class="hb"><div class="lb">처음에 무엇을 만들지 정하기 어려웠다</div><div class="tr"><div class="bf" style="width:45%"></div></div><div class="v">45%</div></div>
+      <h4>AI로 만들다가 어디서 막혔나요?</h4><p class="q">복수 응답</p>
+      <div class="hb bad"><div class="lb">다음에 뭘 할지 몰랐다</div><div class="tr"><div class="bf" style="width:calc(55/60*100%)"></div></div><div class="v">55%</div></div>
+      <div class="hb"><div class="lb">오류 메시지 뜻을 몰랐다</div><div class="tr"><div class="bf" style="width:calc(48/60*100%)"></div></div><div class="v">48%</div></div>
+      <div class="hb"><div class="lb">무엇을 만들지 정하기 어려웠다</div><div class="tr"><div class="bf" style="width:calc(45/60*100%)"></div></div><div class="v">45%</div></div>
+      <div class="hb gray"><div class="lb">어디까지 왔는지 몰랐다</div><div class="tr"><div class="bf" style="width:calc(36/60*100%)"></div></div><div class="v">36%</div></div>
     </div>
   </div>
-  <p class="src survey-src">출처: 고한결 진행 팀 설문 · 코디세이 올인원 과정 수강생 33명 응답(14명은 코딩을 배운 적 없음) · 2026년 11월 5 ~ 7일</p>
-  <div class="hl-box survey-box">코드는 나오는데, <b>왜 그렇게 했는지</b>를 설명하지 못하고 <b>다음에 무엇을 할지</b>를 모릅니다.</div>
-  <div class="deck-footer"><span class="who">Floe · 0:30 · 누적 1:22 · 이재엽</span><span class="slide-number" data-current="3" data-total="18"></span></div>
-  <aside class="notes"><p><em>(발표: 이재엽)</em></p><p>저희가 자체적으로 실행한 설문을 통해서 나온 결과입니다.</p><p>바이브 코딩에서 힘들었던 점을 뽑으면 설명하는 것이 어렵고 자신이 어떤 걸 진행해야 하는지 모른다고 답하였습니다.</p><p>한 줄로 정리하면 AI가 작성한 코드는 나오는데, '왜'를 설명하지 못하고 '다음'을 모릅니다.</p><p>결국 AI를 쓰는 사람은 늘어나는데, 결과를 믿고 설명할 수 있는 사람은 오히려 줄고 있는 겁니다.</p><p>저희는 이 문제를 세 가지 방식으로 풀었습니다.</p></aside>
+  <p class="src survey-src">코디세이 올인원 수강생 33명(14명은 코딩 처음) · 2026.11</p>
+  <div class="deck-footer"><span class="who">Floe · 0:15 · 누적 1:05 · 두승현</span><span class="slide-number" data-current="4" data-total="19"></span></div>
+  <aside class="notes"><p><em>(발표: 두승현 · 0:15 · 누적 1:05)</em></p><p>저희가 직접 설문했습니다. 코디세이 올인원 과정 수강생 33명이고, <strong>그중 14명은 코딩을 배운 적이 없는 분들</strong>입니다.</p><p>(맨 위 막대) AI로 만들다가 어디서 막혔느냐고 물었더니, 1위가 <strong>"다음에 뭘 해야 할지 몰랐다", 55%</strong>였습니다. ▶</p></aside>
 </section>
 
+<!-- 5 문제 — 설명해 보니 -->
+<section class="slide" style="--zoom:1.3" data-title="문제 b-2">
+<header class="hd"><p class="kicker">문제 ② 저희가 직접 물었습니다</p><h2 class="h2">설명해 보라고 하면, 4명 중 3명이 막힙니다</h2></header>
+  <div class="grid survey-panel">
+    <div class="panel">
+      <h4>만든 것을 남에게 설명해 보니</h4><p class="q">점 하나 = 한 사람</p>
+      <div class="wrow">
+        <div class="wleft"><div class="waffle">
+        <i class="ok"></i><i class="ok"></i><i class="ok"></i><i class="ok"></i><i class="ok"></i>
+        <i class="no"></i><i class="no"></i><i class="no"></i><i class="no"></i><i class="no"></i><i class="no"></i><i class="no"></i><i class="no"></i><i class="no"></i><i class="no"></i><i class="no"></i><i class="no"></i><i class="no"></i><i class="no"></i><i class="no"></i><i class="no"></i><i class="no"></i><i class="no"></i><i class="no"></i><i class="no"></i><i class="no"></i><i class="no"></i><i class="no"></i><i class="no"></i>
+        <i class="na"></i><i class="na"></i><i class="na"></i><i class="na"></i>
+      </div>
+          <div class="wlegend"><span><i style="background:var(--accent)"></i>끝까지 <b style="color:var(--accent)">5</b></span><span style="color:var(--bad)"><i style="background:var(--bad)"></i>막힘 <b>24</b></span><span><i style="background:color-mix(in srgb,var(--text-3) 25%,var(--bg))"></i>안 해 봄 <b>4</b></span></div>
+        </div>
+        <div class="wsum"><b>73%</b><span>33명 중 <strong>24명</strong>이<br>중간에 막혔다</span></div>
+      </div>
+    </div>
+  </div>
+  <p class="src survey-src">코디세이 올인원 수강생 33명 · 2026.11</p>
+  <div class="deck-footer"><span class="who">Floe · 0:15 · 누적 1:20 · 두승현</span><span class="slide-number" data-current="5" data-total="19"></span></div>
+  <aside class="notes"><p><em>(발표: 두승현 · 0:15 · 누적 1:20)</em></p><p>이번엔 만든 것을 남에게 설명해 보라고 했습니다. <strong>33명 중 24명, 네 명 중 세 명이 중간에 막혔습니다.</strong> 코드는 돌아가는데, 왜 이렇게 만들었는지는 말하지 못한 겁니다. ▶</p></aside>
+</section>
 
+<!-- 6 문제 — '왜'와 '다음' -->
+<section class="slide" style="--zoom:1.1" data-title="문제 c">
+  <header class="hd"><p class="kicker">문제 ③ 정리하면</p><h2 class="h2">'왜'를 설명하지 못하고, '다음'을 모릅니다</h2></header>
+  <div class="grid survey-panel">
+    <div class="panel">
+      <h4>만들고 나서 막힌 자리</h4><p class="q">복수 응답 · 33명</p>
+      <div class="hb bad"><div class="lb">끝까지 설명하지 못했다</div><div class="tr"><div class="bf" style="width:73%"></div></div><div class="v">73%</div></div>
+      <div class="hb bad"><div class="lb">다음에 뭘 할지 몰랐다</div><div class="tr"><div class="bf" style="width:55%"></div></div><div class="v">55%</div></div>
+      <div class="hb"><div class="lb">무엇을 만들지 정하기 어려웠다</div><div class="tr"><div class="bf" style="width:45%"></div></div><div class="v">45%</div></div>
+    </div>
+  </div>
+  <div class="hl-box survey-box">AI를 쓰는 사람은 느는데, <b>믿고 설명할 수 있는 사람</b>은 줄고 있습니다.</div>
+  <div class="deck-footer"><span class="who">Floe · 0:20 · 누적 1:40 · 두승현</span><span class="slide-number" data-current="6" data-total="19"></span></div>
+  <aside class="notes"><p><em>(발표: 두승현 · 0:20 · 누적 1:40)</em></p><p>정리하면 이렇습니다. <strong>코드는 나오는데, '왜'를 설명하지 못하고 '다음'을 모릅니다.</strong></p><p>결국 AI를 쓰는 사람은 늘어나는데, 결과를 믿고 설명할 수 있는 사람은 오히려 줄고 있는 겁니다.</p><p>저희는 이 문제를 세 가지 방식으로 풀었습니다. ▶</p></aside>
+</section>
+
+<!-- 7 해결 ① 지금 어디인지 -->
 <section class="slide" style="--zoom:1.05" data-title="문제 d-1">
-  <header class="hd"><p class="kicker">문제 ③ 그 문제를 풀려고 플로로를 만들었습니다 (1/3)</p><h2 class="h2">지금 어디까지 왔는지 모른다 → 8단계 지도에 지금 자리가 늘 보입니다</h2></header>
+  <header class="hd"><p class="kicker">해결 ① 지금 어디인지</p><h2 class="h2">8단계 지도에 내 자리가 늘 보입니다</h2></header>
   <div class="pv">
-    <div class="panel pv-prob"><p class="tag bad">기존 문제</p><p class="q2">지금 어디까지 왔지?</p><p class="stat"><b>36%가 "지금 어디까지 왔는지 몰랐다"</b></p><ul class="plain"><li>코드는 쌓이는데 전체 그림이 없다</li><li>끝난 건지 아닌지도 모른다</li></ul></div>
+    <div class="panel pv-prob"><p class="tag bad">문제</p><p class="q2">지금 어디까지 왔지?</p><p class="stat"><b>36%가 몰랐다</b></p></div>
     <div class="pv-arrow">→</div>
-    <div class="panel pv-sol"><p class="tag">플로로의 해결</p><div class="mk mk-map" role="img" aria-label="Floe 8단계 지도 — 1 ~ 4단계 지났고 5단계 진행 중(가계부 앱)"><div class="mcard "><b class="n">1</b><span class="t">무엇을 만들지 정하기</span><span class="st">지났어요</span><span class="chips"><i class="c-ok">Ⅰ 그대로</i><i class="c-ok">Ⅱ 그대로</i><i class="c-ok">Ⅲ 그대로</i><i class="c-pick">Ⅳ 고름</i></span><span class="gave">건네준 것 — 한 문장으로 된 목표</span><span class="f">01-idea/idea.md <em>있음</em></span></div><div class="mcard "><b class="n">2</b><span class="t">아이디어 적어 두기</span><span class="st">지났어요</span><span class="chips"><i class="c-ok">Ⅰ 그대로</i><i class="c-ok">Ⅱ 그대로</i><i class="c-ok">Ⅲ 그대로</i><i class="c-ok">Ⅳ 그대로</i></span><span class="gave">건네준 것 — 정리된 아이디어</span><span class="f">02-plan/plan.md <em>있음</em></span></div><div class="mcard "><b class="n">3</b><span class="t">꼭 필요한 기능 정리하기</span><span class="st">지났어요</span><span class="chips"><i class="c-ok">Ⅰ 그대로</i><i class="c-ok">Ⅱ 그대로</i><i class="c-ok">Ⅲ 그대로</i><i class="c-ok">Ⅳ 그대로</i><i class="c-ok">Ⅴ 그대로</i></span><span class="gave">건네준 것 — 꼭 필요한 기능 목록</span><span class="f">03-requirements/requirements.md <em>있음</em></span></div><div class="mcard "><b class="n">4</b><span class="t">만드는 방법 고르기</span><span class="st">지났어요</span><span class="chips"><i class="c-pick">Ⅰ 고름</i><i class="c-pick">Ⅱ 고름</i><i class="c-fix">Ⅲ 고침</i><i class="c-fix">Ⅳ 고침</i><i class="c-fix">Ⅴ 고침</i></span><span class="gave">건네준 것 — 고른 방법과 그 이유</span><span class="f">04-design/design.md <em>있음</em></span></div><div class="mcard now"><b class="n">5</b><span class="t">뼈대 먼저 이어 보기</span><span class="st">4칸 중 4번째 · 4/4 · 관문 남은 1</span><span class="chips"><i class="c-fix">Ⅰ 고침</i><i class="c-fix">Ⅱ 고침</i><i class="c-fix">Ⅲ 고침</i><i class="c-fix">Ⅳ 고침</i></span><span class="gave">건네준 것 — 돌아가는 뼈대, 할 일 목록</span><span class="f">05-skeleton/skeleton.md <em>아직</em></span></div><div class="mcard later"><b class="n">6</b><span class="t">하나씩 만들고 확인하기</span><span class="st">지도 보기의 '기획서로 3 ~ 8단계 그리기'로 그려요</span><span class="f">06-build/build.md</span></div><div class="mcard later"><b class="n">7</b><span class="t">실제로 써 보고 재 보기</span><span class="st">지도 보기의 '기획서로 3 ~ 8단계 그리기'로 그려요</span><span class="f">07-measure/measure.md</span></div><div class="mcard later"><b class="n">8</b><span class="t">돌아보고 배운 것 남기기</span><span class="st">지도 보기의 '기획서로 3 ~ 8단계 그리기'로 그려요</span><span class="f">08-retro/retro.md</span></div></div><p class="a2">→ <b>8단계 지도</b>에 지금 자리가 늘 보인다</p><ul class="plain"><li>한 프로젝트를 8단계로 — 지금 단계가 표시된다</li><li>단계마다 문서 하나, 끝났는지는 관문이 정한다</li></ul></div>
+    <div class="panel pv-sol"><p class="tag">Floe</p><div class="mk mk-map" role="img" aria-label="Floe 8단계 지도 — 1 ~ 4단계 지났고 5단계 진행 중(가계부 앱)"><div class="mcard "><b class="n">1</b><span class="t">무엇을 만들지 정하기</span><span class="st">지났어요</span><span class="chips"><i class="c-ok">Ⅰ 그대로</i><i class="c-ok">Ⅱ 그대로</i><i class="c-ok">Ⅲ 그대로</i><i class="c-pick">Ⅳ 고름</i></span><span class="gave">건네준 것 — 한 문장으로 된 목표</span><span class="f">01-idea/idea.md <em>있음</em></span></div><div class="mcard "><b class="n">2</b><span class="t">아이디어 적어 두기</span><span class="st">지났어요</span><span class="chips"><i class="c-ok">Ⅰ 그대로</i><i class="c-ok">Ⅱ 그대로</i><i class="c-ok">Ⅲ 그대로</i><i class="c-ok">Ⅳ 그대로</i></span><span class="gave">건네준 것 — 정리된 아이디어</span><span class="f">02-plan/plan.md <em>있음</em></span></div><div class="mcard "><b class="n">3</b><span class="t">꼭 필요한 기능 정리하기</span><span class="st">지났어요</span><span class="chips"><i class="c-ok">Ⅰ 그대로</i><i class="c-ok">Ⅱ 그대로</i><i class="c-ok">Ⅲ 그대로</i><i class="c-ok">Ⅳ 그대로</i><i class="c-ok">Ⅴ 그대로</i></span><span class="gave">건네준 것 — 꼭 필요한 기능 목록</span><span class="f">03-requirements/requirements.md <em>있음</em></span></div><div class="mcard "><b class="n">4</b><span class="t">만드는 방법 고르기</span><span class="st">지났어요</span><span class="chips"><i class="c-pick">Ⅰ 고름</i><i class="c-pick">Ⅱ 고름</i><i class="c-fix">Ⅲ 고침</i><i class="c-fix">Ⅳ 고침</i><i class="c-fix">Ⅴ 고침</i></span><span class="gave">건네준 것 — 고른 방법과 그 이유</span><span class="f">04-design/design.md <em>있음</em></span></div><div class="mcard now"><b class="n">5</b><span class="t">뼈대 먼저 이어 보기</span><span class="st">4칸 중 4번째 · 관문 남은 1</span><span class="chips"><i class="c-fix">Ⅰ 고침</i><i class="c-fix">Ⅱ 고침</i><i class="c-fix">Ⅲ 고침</i><i class="c-fix">Ⅳ 고침</i></span><span class="gave">건네준 것 — 돌아가는 뼈대, 할 일 목록</span><span class="f">05-skeleton/skeleton.md <em>아직</em></span></div><div class="mcard later"><b class="n">6</b><span class="t">하나씩 만들고 확인하기</span><span class="st">다음에 그려요</span><span class="f">06-build/build.md</span></div><div class="mcard later"><b class="n">7</b><span class="t">실제로 써 보고 재 보기</span><span class="st">다음에 그려요</span><span class="f">07-measure/measure.md</span></div><div class="mcard later"><b class="n">8</b><span class="t">돌아보고 배운 것 남기기</span><span class="st">다음에 그려요</span><span class="f">08-retro/retro.md</span></div></div><p class="a2">→ <b>8단계 지도</b>에 지금 자리 표시</p></div>
   </div>
-  <div class="deck-footer"><span class="who">Floe · 0:08 · 누적 1:30 · 이재엽</span><span class="slide-number" data-current="4" data-total="18"></span></div>
-  <aside class="notes"><p><em>(발표: 이재엽)</em></p><p>첫째, 지금 어디까지 왔는지를 보여 줍니다. 프로젝트를 8단계 지도로 나누고, 내 자리를 늘 표시합니다. ▶</p></aside>
+  <div class="deck-footer"><span class="who">Floe · 0:10 · 누적 1:50 · 두승현</span><span class="slide-number" data-current="7" data-total="19"></span></div>
+  <aside class="notes"><p><em>(발표: 두승현 · 0:10 · 누적 1:50)</em></p><p>첫째, <strong>지금 어디까지 왔는지</strong>를 보여 줍니다. 프로젝트를 <strong>8단계 지도</strong>로 나누고, 내 자리를 늘 표시합니다. ▶</p></aside>
 </section>
 
-
+<!-- 8 해결 ② 다음 할 일 -->
 <section class="slide" style="--zoom:1.05" data-title="문제 d-2">
-  <header class="hd"><p class="kicker">문제 ③ 그 문제를 풀려고 플로로를 만들었습니다 (2/3)</p><h2 class="h2">다음에 뭘 해야 할지 모른다 → 다음 할 일은 늘 하나만 보여 줍니다</h2></header>
+  <header class="hd"><p class="kicker">해결 ② 다음 할 일</p><h2 class="h2">할 일은 늘 하나만 보여 줍니다</h2></header>
   <div class="pv">
-    <div class="panel pv-prob"><p class="tag bad">기존 문제</p><p class="q2">다음엔 뭘 해야 하지?</p><p class="stat"><b>55%가 "다음에 무엇을 해야 할지 몰랐다"</b></p><ul class="plain"><li>설문에서 막힌 자리 1위</li><li>AI가 "다 만들었어요" 하면 24%는 그대로 넘어간다</li><li>할 일이 안 보이니 멈춘다</li></ul></div>
+    <div class="panel pv-prob"><p class="tag bad">문제</p><p class="q2">다음엔 뭘 해야 하지?</p><p class="stat"><b>55%가 몰랐다 — 1위</b></p></div>
     <div class="pv-arrow">→</div>
-    <div class="panel pv-sol"><p class="tag">플로로의 해결</p><div class="mk mk-quest" role="img" aria-label="퀘스트 — 4단계 5칸 중 1번째만 켜짐"><span class="h">퀘스트</span><p class="hd2"><b>4단계 · 만드는 방법 고르기</b> — 5칸 중 1번째, 정한 줄 0/5</p><ol class="ql"><li class="on"><b>Ⅰ</b> 가계부를 만들 후보 찾기</li><li><b>Ⅱ</b> 후보별 좋은 점과 아쉬운 점</li><li><b>Ⅲ</b> 고른 방법과 까닭 남기기</li><li><b>Ⅳ</b> 지킬 약속과 방법 맞대어 보기</li><li><b>Ⅴ</b> 볼 수 있는 사람과 정보 둘 곳</li></ol></div><p class="a2">→ 다음 할 일은 늘 <b>하나만</b> 보여 준다</p><ul class="plain"><li>퀘스트 탭에 지금 할 일 하나</li><li>초안은 플로로가, 확정은 내가 — 칸마다 "맞아요 · 고칠래요"</li></ul></div>
+    <div class="panel pv-sol"><p class="tag">Floe</p><div class="mk mk-quest" role="img" aria-label="퀘스트 — 4단계 5칸 중 1번째만 켜짐"><span class="h">퀘스트</span><p class="hd2"><b>4단계 · 만드는 방법 고르기</b> — 5칸 중 1번째</p><ol class="ql"><li class="on"><b>Ⅰ</b> 가계부를 만들 후보 찾기</li><li><b>Ⅱ</b> 후보별 좋은 점과 아쉬운 점</li><li><b>Ⅲ</b> 고른 방법과 까닭 남기기</li><li><b>Ⅳ</b> 지킬 약속과 방법 맞대어 보기</li><li><b>Ⅴ</b> 볼 수 있는 사람과 정보 둘 곳</li></ol></div><p class="a2">→ 초안은 <b>플로로</b>가, 확정은 <b>사람</b>이</p></div>
   </div>
-  <div class="deck-footer"><span class="who">Floe · 0:09 · 누적 1:39 · 이재엽</span><span class="slide-number" data-current="5" data-total="18"></span></div>
-  <aside class="notes"><p><em>(발표: 이재엽)</em></p><p>둘째, 다음에 뭘 할지를 알려 줍니다. 할 일은 하나씩만 보여 줍니다. 길잡이 캐릭터 플로로가 초안을 써 오면, 확정은 사람이 합니다.</p></aside>
+  <div class="deck-footer"><span class="who">Floe · 0:10 · 누적 2:00 · 두승현</span><span class="slide-number" data-current="8" data-total="19"></span></div>
+  <aside class="notes"><p><em>(발표: 두승현 · 0:10 · 누적 2:00)</em></p><p>둘째, <strong>다음에 뭘 할지</strong>를 알려 줍니다. 할 일은 <strong>늘 하나만</strong> 보여 줍니다. 길잡이 캐릭터 플로로가 초안을 써 오면, 확정은 사람이 합니다. ▶</p></aside>
 </section>
 
-
+<!-- 9 해결 ③ 왜 그랬는지 -->
 <section class="slide" style="--zoom:1.05" data-title="문제 d-3">
-  <header class="hd"><p class="kicker">문제 ③ 그 문제를 풀려고 플로로를 만들었습니다 (3/3)</p><h2 class="h2">왜 이렇게 했는지 설명하지 못한다 → 단계마다 까닭 · 배운 것을 책으로 남깁니다</h2></header>
+  <header class="hd"><p class="kicker">해결 ③ 왜 그랬는지</p><h2 class="h2">이유와 배운 것이 책으로 쌓입니다</h2></header>
   <div class="pv">
-    <div class="panel pv-prob"><p class="tag bad">기존 문제</p><p class="q2">왜 이렇게 했지?</p><p class="stat"><b>73%가 만든 것을 끝까지 설명하지 못했다</b></p><ul class="plain"><li>결정은 AI와 나눈 대화 속에 흩어진다</li><li>남는 건 코드와 README뿐</li></ul></div>
+    <div class="panel pv-prob"><p class="tag bad">문제</p><p class="q2">왜 이렇게 했지?</p><p class="stat"><b>73%가 설명하지 못했다</b></p></div>
     <div class="pv-arrow">→</div>
-    <div class="panel pv-sol"><p class="tag">플로로의 해결</p><div class="mk mk-book" role="img" aria-label="README 책 — 1단계 한 장"><div class="bk"><span class="v">V.1 2026-11-01</span><h5>1단계 · 무엇을 만들지 정하기 — 한 장</h5><ul><li><b>생각:</b> 무엇을 만들지 정하기 — 처음 한 말: "가계부 앱을 만들고 싶음"</li><li><b>한 일:</b> 맡긴 일 · 바뀐 파일은 없었어요</li><li><b>정한 것:</b> 불편: 쓴 돈을 어디에 얼마 썼는지 한눈에 보기 어려워요 / 달라지는 것: 지난달과 이번달 쓴 돈을 쉽게 비교할 수 있어요 / 누가: 쓰는 사람: 본인 — 나 혼자 써요</li><li><b>배운 말:</b> 규모 등급</li><li><b>다음 할 일:</b> 2단계 · 아이디어 적어 두기</li><li><b>확인한 날:</b> 2026-11-01</li></ul></div></div><p class="a2">→ 단계마다 <b>까닭 · 배운 것</b>을 책으로 남긴다</p><ul class="plain"><li>관문을 넘을 때마다 까닭 한 줄 · 배운 것 한 줄</li><li>README 책 V.1 → V.3, 내 GitHub에 쌓인다</li></ul></div>
+    <div class="panel pv-sol"><p class="tag">Floe</p><div class="mk mk-book" role="img" aria-label="README 책 — 1단계 한 장"><div class="bk"><span class="v">V.1 2026-11-01</span><h5>1단계 · 무엇을 만들지 정하기</h5><ul><li><b>생각:</b> "가계부 앱을 만들고 싶음"</li><li><b>정한 것:</b> 지난달과 이번달 쓴 돈을 쉽게 비교</li><li><b>배운 말:</b> 규모 등급</li><li><b>다음 할 일:</b> 2단계 · 아이디어 적어 두기</li></ul></div></div><p class="a2">→ 단계를 넘을 때마다 <b>이유 · 배운 것</b></p></div>
   </div>
-  <div class="deck-footer"><span class="who">Floe · 0:07 · 누적 1:46 · 이재엽</span><span class="slide-number" data-current="6" data-total="18"></span></div>
-  <aside class="notes"><p><em>(발표: 이재엽)</em></p><p>왜 그랬는지에 대한 까닭은 단계마다 결정사항과 배운 것을 책으로 남기도록 하였습니다.</p></aside>
+  <div class="deck-footer"><span class="who">Floe · 0:10 · 누적 2:10 · 두승현</span><span class="slide-number" data-current="9" data-total="19"></span></div>
+  <aside class="notes"><p><em>(발표: 두승현 · 0:10 · 누적 2:10)</em></p><p>셋째, <strong>왜 그렇게 했는지</strong>를 남깁니다. 한 단계를 넘어갈 때마다 이유와 배운 것을 적고, 그게 책으로 쌓입니다.</p><p>이 세 가지가 실제로 어떻게 보이는지, 38초 영상으로 보시겠습니다. 영상이 끝나면 다음 발표자가 이어 가겠습니다. ▶</p></aside>
 </section>
 
-
+<!-- 10 홍보 영상 -->
 <section class="slide" style="--zoom:1.3" data-title="홍보 영상">
-  <header class="hd"><p class="kicker">제품 ① 홍보 영상</p><h2 class="h2">38초 — 초안은 플로로가, 확정은 내가</h2></header>
+  <header class="hd"><p class="kicker">홍보 영상 · 38초</p><h2 class="h2">초안은 플로로가, 확정은 내가</h2></header>
   <div class="fig"><figure class="img-frame contain"><video controls preload="none" poster="deck/shots/promo-poster.jpg" src="deck/floe-promo-38s.mp4"></video></figure></div>
-  <div class="deck-footer"><span class="who">Floe · 0:40 · 누적 2:26 · 영상 38초 · 이재엽</span><span class="slide-number" data-current="7" data-total="18"></span></div>
-  <aside class="notes"><p><em>(발표: 이재엽)</em></p><p>(홍보 영상 재생 — ▶ 누르고 38초 동안 말하지 않습니다. 끝나면 바로 다음 장으로.)</p></aside>
+  <div class="deck-footer"><span class="who">Floe · 0:40 · 누적 2:50 · 영상 38초 · 두승현 → 이재엽</span><span class="slide-number" data-current="10" data-total="19"></span></div>
+  <aside class="notes"><p><em>(발표: 두승현 · 0:40 · 누적 2:50 · 영상 38초)</em></p><p>(영상 재생 — <strong>영상 중에는 말하지 않는다.</strong> 소리가 안 나와도 기다리지 않고 그대로 튼다.)</p><p>(끝나면 이재엽이 바로 11장으로 잇는다.) ▶</p></aside>
 </section>
 
-
-<section class="slide" style="--zoom:1.28" data-title="Why">
-  <header class="hd"><p class="kicker">제품 ② Why — 왜 플로로인가 (기획 의도)</p><h2 class="h2">AI 코딩 도구를 대신하지 않고, 그 위에서 안내합니다</h2></header>
+<!-- 11 Why -->
+<section class="slide" style="--zoom:1.2" data-title="Why">
+  <header class="hd"><p class="kicker">Why — 왜 Floe인가</p><h2 class="h2">쓰던 AI 도구 위에서 길을 안내합니다</h2></header>
   <table class="alt">
-    <thead><tr><th>생각해 본 길</th><th>좋은 점</th><th>막힌 자리('왜' · '다음')에는</th></tr></thead>
+    <thead><tr><th>다른 길</th><th>좋은 점</th><th>아쉬운 점</th></tr></thead>
     <tbody>
-      <tr><td>AI 코딩 도구만 쓴다</td><td>코드가 가장 빨리 나온다</td><td class="no">'왜'는 대화 속에 묻히고, 다음 할 일은 안 알려 준다</td></tr>
-      <tr><td>강의 · 튜토리얼</td><td>개념을 순서대로 배운다</td><td class="no">내 프로젝트와 따로 — 배운 것이 내 코드에 붙지 않는다</td></tr>
-      <tr><td>체크리스트 · 템플릿 문서</td><td>순서가 있고 가볍다</td><td class="no">내 상황에 맞춰 바뀌지 않고, 끝까지 읽는 사람이 없다</td></tr>
-      <tr><td>새 AI 코딩 도구를 만든다</td><td>처음부터 과정을 넣을 수 있다</td><td class="no">쓰던 도구를 버려야 하고, 만들 것이 너무 크다</td></tr>
-      <tr class="pick"><td>쓰던 도구 <b>위에서</b> 안내하는 길잡이 — <b>Floe</b></td><td>내 Claude Code 그대로 · 내 프로젝트를 8단계로</td><td class="ok">단계 · 할 일 하나 · 까닭 기록이 내 폴더와 GitHub에 남는다</td></tr>
+      <tr><td>AI 코딩 도구만</td><td>빠르다</td><td class="no">판단 근거 · 다음 할 일이 없다</td></tr>
+      <tr><td>유튜브 강의</td><td>개념을 배운다</td><td class="no">필요한 만큼 골라 쓸 수 없다</td></tr>
+      <tr><td>체크리스트 · 템플릿</td><td>순서가 있다</td><td class="no">내 상황에 맞춰 바뀌지 않는다</td></tr>
+      <tr><td>새 도구 만들기</td><td>처음부터 설계</td><td class="no">무겁고, 쓰던 도구와 안 맞는다</td></tr>
+      <tr class="pick"><td><b>Floe</b> — 그 위의 길잡이</td><td>쓰던 도구 그대로</td><td class="ok">기록이 내 폴더 · GitHub에 남는다</td></tr>
     </tbody>
   </table>
-  <div class="deck-footer"><span class="who">Floe · 0:46 · 누적 3:12 · 이재엽</span><span class="slide-number" data-current="8" data-total="18"></span></div>
-  <aside class="notes"><p><em>(발표: 이재엽)</em></p><p>지금 현재 AI 사용자들의 불편한 점은 크게 4가지로</p><p>AI 코딩 도구만 쓰면 결과물은 빠르게 나오지만 그 결과물에는 판단 근거와 다음 작업에 대한 내용이 없습니다.</p><p>유튜브 강의는 일방적인 자료로서 프로젝트에 필요한 개념들을 원하는 만큼만 정해서 가져오지 못합니다.</p><p>체크리스트는 순서를 맞춰 줄지언정 내 상황에 맞춰 유동적으로 바뀌지 않습니다.</p><p>플로로가 아닌 새로운 도구를 만들기엔 작업이 너무 무거워지고 원래 사용하던 AI 도구들과 호환되지 못합니다.</p><p>그래서 쓰던 Claude Code는 그대로 두고, <strong>그 위에서</strong> 길을 안내하고 확인시켜 주는 앱을 만들었습니다. 기록은 내 폴더와 GitHub에 남습니다.</p></aside>
+  <div class="deck-footer"><span class="who">Floe · 0:35 · 누적 3:25 · 이재엽</span><span class="slide-number" data-current="11" data-total="19"></span></div>
+  <aside class="notes"><p><em>(발표: 이재엽 · 0:35 · 누적 3:25)</em></p><p>이어서 설명하겠습니다. 왜 Floe를 사용해야 할까요? 지금 AI 사용자들의 불편한 점을 크게 네 가지로 분류하였습니다.</p><p>AI 코딩 도구만 쓰면 결과물은 빠르게 나오지만, 그 결과물에는 판단 근거와 다음 작업에 대한 내용이 없습니다.</p><p>유튜브 강의는 일방적인 자료로서, 프로젝트에 필요한 개념들을 원하는 만큼만 정해서 가져오지 못합니다.</p><p>체크리스트와 템플릿은 순서를 맞춰 줄지언정, 내 상황에 맞춰 유동적으로 바뀌지 않습니다.</p><p>새로운 도구를 만들기엔 작업이 너무 무거워지고, 원래 사용하던 AI 도구들과 호환되지 못합니다.</p><p>그래서 쓰던 바이브코딩 도구는 그대로 두고, <strong>그 위에서 길을 안내하고 확인시켜 주는 앱</strong>을 만들었습니다. 기록은 내 폴더와 GitHub에 남습니다. ▶</p></aside>
 </section>
 
-
+<!-- 12 How ① 한 바퀴 -->
 <section class="slide" style="--zoom:1.15" data-title="How ①">
-  <header class="hd"><p class="kicker">제품 ③ How — 어떻게 작동하나 (한 프로젝트)</p><h2 class="h2">설치에서 다음 프로젝트까지, 한 바퀴를 안내합니다</h2></header>
+  <header class="hd"><p class="kicker">How ① 한 바퀴</p><h2 class="h2">설치에서 다음 프로젝트까지</h2></header>
   <div class="cyc">
-    <div class="cn"><span class="ic">①</span><h4>설치 · 연결</h4><p>앱을 켜고 내 Claude Code · GitHub · 폴더를 잇는다</p></div>
+    <div class="cn"><span class="ic">①</span><h4>설치 · 연결</h4><p>Claude Code · GitHub를 잇는다</p></div>
     <div class="ca">→</div>
-    <div class="cn"><span class="ic">②</span><h4>아이디어 한 단락</h4><p>원하는 것을 쓰면 1단계 문서 초안이 온다</p></div>
+    <div class="cn"><span class="ic">②</span><h4>아이디어</h4><p>말하면 1단계 초안이 온다</p></div>
     <div class="ca">→</div>
-    <div class="cn ring"><div class="rg"><span class="sb" style="--x:0px;--y:-118px"><b>1</b>정하기</span><span class="sb" style="--x:83px;--y:-83px"><b>2</b>적어 두기</span><span class="sb" style="--x:118px;--y:0px"><b>3</b>기능 정리</span><span class="sb" style="--x:83px;--y:83px"><b>4</b>방법 고르기</span><span class="sb" style="--x:0px;--y:118px"><b>5</b>뼈대</span><span class="sb" style="--x:-83px;--y:83px"><b>6</b>만들기</span><span class="sb" style="--x:-118px;--y:0px"><b>7</b>재 보기</span><span class="sb" style="--x:-83px;--y:-83px"><b>8</b>돌아보기</span><div class="core"><b>8단계 반복</b><span>초안 → 맡기기<br>→ 관문 → 책</span></div></div><h4>③ 단계마다 한 바퀴</h4><p>넘어갈지는 사람이 누른다</p></div>
+    <div class="cn ring"><div class="rg"><span class="sb" style="--x:0px;--y:-118px"><b>1</b>정하기</span><span class="sb" style="--x:83px;--y:-83px"><b>2</b>적어 두기</span><span class="sb" style="--x:118px;--y:0px"><b>3</b>기능 정리</span><span class="sb" style="--x:83px;--y:83px"><b>4</b>방법 고르기</span><span class="sb" style="--x:0px;--y:118px"><b>5</b>뼈대</span><span class="sb" style="--x:-83px;--y:83px"><b>6</b>만들기</span><span class="sb" style="--x:-118px;--y:0px"><b>7</b>재 보기</span><span class="sb" style="--x:-83px;--y:-83px"><b>8</b>돌아보기</span><div class="core"><b>8단계</b><span>차례로 진행</span></div></div><h4>③ 8단계</h4><p>넘어갈지는 사람이 정한다</p></div>
     <div class="ca">→</div>
-    <div class="cn"><span class="ic">④</span><h4>완주 · 회고</h4><p>배운 것 3줄 · 가져갈 것을 정한다</p></div>
+    <div class="cn"><span class="ic">④</span><h4>완주 · 회고</h4><p>가져갈 것을 정한다</p></div>
     <div class="ca">→</div>
-    <div class="cn"><span class="ic">⑤</span><h4>다음 프로젝트</h4><p>가져갈 것을 들고 다시 ② 부터 — <b>LV ↑</b></p></div>
+    <div class="cn"><span class="ic">⑤</span><h4>다음 프로젝트</h4><p>다시 ②부터 — <b>LV ↑</b></p></div>
   </div>
-  <div class="cyc-back"><svg viewBox="0 0 1700 70" preserveAspectRatio="none" aria-hidden="true"><path d="M1560 0 V46 Q1560 60 1546 60 H394 Q380 60 380 46 V14" fill="none" stroke="var(--accent)" stroke-width="3" stroke-dasharray="10 8"/><path d="M370 24 L380 8 L390 24" fill="none" stroke="var(--accent)" stroke-width="3"/></svg><p>배운 것이 다음 프로젝트로 — 프로젝트를 거듭할수록 <b>만드는 법이 내 것</b>이 된다</p></div>
-  <div class="deck-footer"><span class="who">Floe · 0:28 · 누적 3:40 · 이재엽</span><span class="slide-number" data-current="9" data-total="18"></span></div>
-  <aside class="notes"><p><em>(발표: 이재엽)</em></p><p>Floe의 큰 흐름입니다. (왼쪽) 처음 설치하면 내 Claude Code와 GitHub를 잇고, 만들고 싶은 것을 플로로에게 말하면 1단계 초안이 나옵니다.</p><p>(가운데) 그다음 요구사항을 바탕으로 작업을 8단계로 나누고 순차적으로 진행이 됩니다. 작업이 끝난 후 넘어갈지는 사람이 정합니다. 모든 작업을 마치면 가져갈 것을 정해 다음 프로젝트로 갑니다. 거듭할수록 만드는 법이 내 것이 됩니다.</p></aside>
+  <div class="cyc-back"><svg viewBox="0 0 1700 70" preserveAspectRatio="none" aria-hidden="true"><path d="M1560 0 V46 Q1560 60 1546 60 H394 Q380 60 380 46 V14" fill="none" stroke="var(--accent)" stroke-width="3" stroke-dasharray="10 8"/><path d="M370 24 L380 8 L390 24" fill="none" stroke="var(--accent)" stroke-width="3"/></svg><p>거듭할수록 <b>만드는 법이 내 것</b>이 된다</p></div>
+  <div class="deck-footer"><span class="who">Floe · 0:30 · 누적 3:55 · 이재엽</span><span class="slide-number" data-current="12" data-total="19"></span></div>
+  <aside class="notes"><p><em>(발표: 이재엽 · 0:30 · 누적 3:55)</em></p><p>Floe의 큰 흐름입니다. (왼쪽) 처음 설치하면 내 Claude Code와 GitHub를 잇고, 만들고 싶은 것을 플로로에게 말하면 1단계 초안이 나옵니다.</p><p>(가운데) 그다음 요구사항을 바탕으로 작업을 8단계로 나누고 순차적으로 진행이 됩니다. 작업이 끝난 후 넘어갈지는 사람이 정합니다.</p><p>모든 작업을 마치면 가져갈 것을 정해 다음 프로젝트로 넘어갑니다. <strong>거듭할수록 만드는 법이 내 것이 됩니다.</strong> ▶</p></aside>
 </section>
 
-
+<!-- 13 How ② 한 단계 -->
 <section class="slide" style="--zoom:1.15" data-title="How ②">
-  <header class="hd"><p class="kicker">제품 ③ How — 어떻게 작동하나 (한 단계)</p><h2 class="h2">초안은 AI가, 확정은 사람이, 판정은 코드가</h2></header>
+  <header class="hd"><p class="kicker">How ② 한 단계</p><h2 class="h2">초안은 AI가, 확정은 사람이, 판정은 코드가</h2></header>
   <div class="lane">
     <div class="lh"></div>
     <div class="ls"><b>①</b> 초안</div><div class="la">→</div><div class="ls"><b>②</b> 확정</div><div class="la">→</div><div class="ls"><b>③</b> 맡기기</div><div class="la">→</div><div class="ls"><b>④</b> 관문</div><div class="la">→</div><div class="ls"><b>⑤</b> 책</div>
     <div class="ll ai">AI<small>플로로 · Claude Code</small></div>
-    <div class="lc ai">단계 문서 초안을 써 온다</div><div class="lv"></div><div class="lc dim">—</div><div class="lv"></div><div class="lc ai">코딩은 Claude Code가 한다</div><div class="lv"></div><div class="lc dim">—</div><div class="lv"></div><div class="lc dim">—</div>
+    <div class="lc ai">초안을 쓴다</div><div class="lv"></div><div class="lc dim">—</div><div class="lv"></div><div class="lc ai">코딩을 한다</div><div class="lv"></div><div class="lc ai">모르는 곳을 묻는다</div><div class="lv"></div><div class="lc dim">—</div>
     <div class="ll hu">사람<small>나</small></div>
-    <div class="lc dim">—</div><div class="lv"></div><div class="lc hu">칸마다 "맞아요 · 고칠래요"</div><div class="lv"></div><div class="lc hu">허락 카드 — 허용 · 거절은 내가</div><div class="lv"></div><div class="lc hu">"이해하셨나요?"에 답한다 — 넘어갈지는 내가 누른다</div><div class="lv"></div><div class="lc dim">—</div>
-    <div class="ll cd">코드 · 기록<small>navigator.js · GitHub</small></div>
-    <div class="lc dim">—</div><div class="lv"></div><div class="lc dim">—</div><div class="lv"></div><div class="lc dim">—</div><div class="lv"></div><div class="lc cd">끝났는지는 규칙이 판정 — 토큰 0</div><div class="lv"></div><div class="lc cd">문서 · 결정 기록이 내 GitHub에 쌓인다</div>
+    <div class="lc dim">—</div><div class="lv"></div><div class="lc hu">방향을 확정</div><div class="lv"></div><div class="lc hu">허용 · 거절</div><div class="lv"></div><div class="lc hu">이해 완료를 누른다</div><div class="lv"></div><div class="lc dim">—</div>
+    <div class="ll cd">코드 · 기록<small>규칙 · GitHub</small></div>
+    <div class="lc dim">—</div><div class="lv"></div><div class="lc dim">—</div><div class="lv"></div><div class="lc dim">—</div><div class="lv"></div><div class="lc cd">규칙이 판정</div><div class="lv"></div><div class="lc cd">GitHub에 쌓인다</div>
   </div>
-  <div class="hl-box mt-l" style="width:min(1700px,100%);margin-left:auto;margin-right:auto">한 단계가 끝나면 ① 로 돌아가 다음 단계 — <b>AI가 판정까지 하면 배울 자리가 사라지므로</b>, 확정과 넘어가기는 사람이 누릅니다.</div>
-  <div class="deck-footer"><span class="who">Floe · 0:49 · 누적 4:29 · 이재엽</span><span class="slide-number" data-current="10" data-total="18"></span></div>
-  <aside class="notes"><p><em>(발표: 이재엽)</em></p><p>첫 단계에서는 사람이 작성한 요구사항을 반영한 기초 초안은 AI가 쓰고, 방향은 사람이 확정 짓습니다. 그리고 마무리 작업이 끝을 내는 <strong>판정은 코드 규칙</strong>이 합니다.</p><p>판정을 통과하면 Floe가 "이해하셨나요?"라고 묻습니다. 이해가 된다면 "이해완료" 버튼을 눌러 확정 짓습니다. 하지만 아닌 경우는 AI가 이해에 필요한 내용들을 찾아서 물어봐 줍니다. 그중 사용자가 선택한 부분에 대해 이해하도록 돕습니다.</p><p>저희가 생각한 부분은 AI가 판정까지 하면 사람이 배울 자리가 사라지고, 사람이 판정에 대한 책임을 가져야 한다고 생각했습니다. 그 결론으로 사람이 이해해야만 넘어가게 했습니다.</p><p>그렇게 넘은 단계의 기록은 내 GitHub에 쌓입니다. 실제 시연영상으로 보시죠. ▶</p></aside>
+  <div class="hl-box mt-l" style="width:min(1700px,100%);margin-left:auto;margin-right:auto">AI가 판정까지 하면 배울 자리가 사라집니다 — <b>이해해야 넘어갑니다</b></div>
+  <div class="deck-footer"><span class="who">Floe · 0:30 · 누적 4:25 · 이재엽</span><span class="slide-number" data-current="13" data-total="19"></span></div>
+  <aside class="notes"><p><em>(발표: 이재엽 · 0:30 · 누적 4:25)</em></p><p>첫 단계에서는 사람이 작성한 요구사항을 반영한 기초 초안은 AI가 쓰고, 방향은 사람이 확정 짓습니다. 그리고 마무리 작업이 끝났는지 내는 <strong>판정은 코드 규칙</strong>이 합니다.</p><p>판정을 통과하면 Floe가 "이해하셨나요?"라고 묻습니다. 이해가 된다면 "이해 완료" 버튼을 눌러 확정 짓습니다. 아닌 경우에는 AI가 이해에 필요한 내용들을 찾아서 물어봐 주고, 그중 사용자가 선택한 부분을 이해하도록 돕습니다.</p><p>저희는 AI가 판정까지 하면 사람이 배울 자리가 사라지고, 판정에 대한 책임은 사람이 가져야 한다고 생각했습니다. 그 결론으로 <strong>사람이 이해해야만 넘어가게</strong> 했습니다.</p><p>그렇게 넘은 단계의 기록은 내 GitHub에 쌓입니다. 실제 시연 영상으로 보시죠. ▶</p></aside>
 </section>
 
-
+<!-- 14 시연 영상 -->
 <section class="slide" data-title="시연 영상">
-  <header class="hd"><p class="kicker">제품 ④ 시연 영상 — 진짜 앱 · 진짜 AI · 50초</p><h2 class="h2">켜서 연결하고, 묻고, 허락하고, 지도로 다음을 봅니다</h2></header>
+  <header class="hd"><p class="kicker">시연 영상 · 56초</p><h2 class="h2">진짜 앱, 진짜 AI</h2></header>
   <div class="demo" style="height:790px">
-    <figure class="img-frame contain" style="height:100%;width:auto;aspect-ratio:16/9;max-width:100%"><video id="demo" controls preload="metadata" poster="deck/shots/demo-poster.jpg" src="deck/floe-demo.webm" data-end="50"></video></figure>
+    <figure class="img-frame contain" style="height:100%;width:auto;aspect-ratio:16/9;max-width:100%"><video id="demo" controls preload="metadata" poster="deck/shots/demo-poster.jpg" src="deck/floe-demo.webm"></video></figure>
   </div>
-  <div class="deck-footer"><span class="who">Floe · 0:52 · 누적 5:21 · 영상 50초 · 이재엽</span><span class="slide-number" data-current="11" data-total="18"></span></div>
-  <aside class="notes"><p><em>(발표: 이재엽)</em></p><p>시연영상입니다.</p><p>(영상 재생 — <strong>0:50에서 저절로 멈춥니다.</strong> 멈추면 바로 다음 장으로.)</p></aside>
-  <script>
-  (function(){
-    var v=document.getElementById('demo'); if(!v) return;
-    var end=parseFloat(v.getAttribute('data-end')); if(!end) return;
-    var stopped=false, FADE=1.2;
-    v.addEventListener('timeupdate',function(){
-      var t=v.currentTime;
-      if(t<end-FADE){ stopped=false; v.volume=1; return; }
-      if(stopped){ v.volume=1; return; }
-      if(t>=end){ stopped=true; v.pause(); v.volume=1; }
-      else { v.volume=Math.max(0,(end-t)/FADE); }
-    });
-  })();
-  </script>
+  <div class="deck-footer"><span class="who">Floe · 1:20 · 누적 5:45 · 영상 56초 · 이재엽</span><span class="slide-number" data-current="14" data-total="19"></span></div>
+  <aside class="notes"><p><em>(발표: 이재엽 · 1:20 · 누적 5:45 · 영상 56초)</em></p><p>시연 영상입니다.</p><p>(영상 재생 — <strong>0:25 관문 장면에서 한 마디만.</strong> 그 밖에는 말하지 않는다.)</p><p>(0:25) <strong>넘어갈지는 사람이 누릅니다.</strong></p><p>(영상이 멈추면) "이어서 결과를 비교해 보겠습니다." ▶</p></aside>
 </section>
 
-
+<!-- 15 What ① AI는 리포트, 사람은 앱 -->
 <section class="slide" data-title="결과 비교">
-  <style>
-    .slide[data-title="결과 비교"] .rva .ln{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
-    .slide[data-title="결과 비교"] .rva .tok{margin-left:auto;font-size:28px;font-weight:800;color:var(--bad);white-space:nowrap}
-    .slide[data-title="결과 비교"] .rva .best .tok{color:var(--good)}
-    
-    .slide.is-active[data-title="결과 비교"] .rva .col:not(.best){animation:a-inL .7s cubic-bezier(.2,.8,.2,1) both .2s}
-  </style>
-  <header class="hd"><p class="kicker">제품 ⑤ What — 같은 미션 '국내 여행 추천'</p><h2 class="h2">AI는 '리포트'로 이해했고, 사람은 플로로와 '앱'을 만들었습니다</h2></header>
+  <header class="hd"><p class="kicker">What ① 같은 미션 '국내 여행 추천 앱'</p><h2 class="h2">AI는 리포트, 사람은 앱</h2></header>
   <div class="rva">
     <div class="col">
       <h4>AI 혼자 — <b>리포트</b></h4>
       <figure class="img-frame"><img src="deck/shots/r04-claude.png" alt="AI가 만든 결과 — 국내 여행 추천 리포트 문서" style="--pos:50% 0;--z:1.15;--o:50% 0"></figure>
-      <p class="ln"><span class="tag2 bad">건너뜀</span>묻지 않고 혼자 정함 → 다시 작업<span class="tok">앱까지 약 100만 토큰 · 예측</span></p>
+      <p class="ln"><span class="tag2 bad">미션을 오해</span>토큰 10만</p>
     </div>
     <div class="vs" aria-hidden="true">VS</div>
     <div class="col best">
       <h4>사람 + Floe — <b>앱</b></h4>
       <figure class="img-frame"><img src="deck/shots/r03-app.png" alt="사람과 플로로가 정한 대로 만든 앱 — 날짜 입력, 진행 네 단계, 결과" style="--pos:50% 0;--z:1.2;--o:50% 0"></figure>
-      <p class="ln"><span class="tag2 ok">사람이 정함</span>모든 결정을 제가 확정<span class="tok">약 52만 토큰 · 추정</span></p>
+      <p class="ln"><span class="tag2 ok">사람이 판단</span>날짜 하나 → 여행 추천</p>
     </div>
   </div>
-  <p class="say mt-l" style="font-size:30px;text-align:center">AI는 물어야 할 것을 건너뜁니다 — <strong>무엇을 만들지 사람이 정하게</strong> 하는 것, 그게 Floe</p>
-  <div class="deck-footer"><span class="who">Floe · 1:12 · 누적 6:33 · 이재엽</span><span class="slide-number" data-current="12" data-total="18"></span></div>
-  <aside class="notes"><p><em>(발표: 이재엽)</em></p><p>이어서 개발 결과물을 비교해 설명드리겠습니다. 코디세이의 '국내 여행 추천'을 앱까지 만들어 보도록 하였습니다.</p><p>(왼쪽) AI 혼자는 미션을 '리포트'로 이해했습니다. 저희가 원하는 것은 앱을 만드는 것인데, 정해야 할 네 가지를 묻지 않고 혼자 정했고, 왜 그렇게 정했는지는 한 줄도 없습니다. 미션 수행을 위해선 다시 작업을 해야 합니다.</p><p>그리고 AI는 한 번에 이해하지 못합니다. Floe 없이 AI와 사람이 함께 앱까지 만든다면 <strong>약 100만 토큰</strong>이 들 것으로 예측했습니다. 왜냐하면 AI가 계속 사람의 방향을 무시하고, 원하는 값들을 정리하지 못한 상태에서 계속 바이브 코딩을 한다면 방향을 잃기 때문입니다.</p><p>(오른쪽) 제가 Floe와 함께 만든 결과는 앱이 됐습니다. 서버가 있는 웹으로, 여행 날짜 하나만 입력하면 자동으로 AI가 여행 추천지를 작성해 줍니다. 그 과정에서 모든 내용은 제가 확정하고 정했습니다. 그 과정에서 사용된 토큰은 <strong>약 52만 토큰</strong>으로 추정합니다.</p><p>(결론 줄) AI는 스스로 물어야 할 것을 건너뜁니다. 무엇을 만들지 사람이 정하게 하는 것, 그게 Floe입니다. ▶</p></aside>
+  <p class="say mt-l" style="font-size:30px;text-align:center">AI의 결정을 <strong>사람이 판단</strong>하니, 원하는 것이 나옵니다</p>
+  <div class="deck-footer"><span class="who">Floe · 0:55 · 누적 6:40 · 이재엽</span><span class="slide-number" data-current="15" data-total="19"></span></div>
+  <aside class="notes"><p><em>(발표: 이재엽 · 0:55 · 누적 6:40)</em></p><p>(장이 열리면 왼쪽 리포트 → VS → 오른쪽 앱 순서로 움직인다. 움직임을 따라 가리킨다. 말은 바로 시작해도 된다.)</p><p>이어서 결과물을 비교해 설명드리겠습니다. 대전 코디세이 미션인 '국내 여행 추천 앱'을 만들어 보도록 하였습니다.</p><p>(왼쪽) 왼쪽은 AI 작업물입니다. 저희가 원하는 것은 앱을 만드는 것인데, AI는 결과물을 웹사이트에 리포트만 제시하면 된다고 이해하였습니다. 완성한 내용으로 토큰을 측정했을 때 <strong>10만 토큰</strong>이 나왔고, AI는 미션을 이해하지 못했습니다.</p><p>(오른쪽) 제가 Floe와 함께 만든 결과는 <strong>앱</strong>이 됐습니다. 서버가 있는 웹으로, 여행 날짜 하나만 입력하면 자동으로 AI가 여행 추천지를 작성해 줍니다.</p><p><strong>AI의 의사결정을 사람이 판단하니, 사람이 원하는 것을 만들 수 있습니다.</strong> ▶</p></aside>
 </section>
 
-
+<!-- 16 What ② 한 권의 책 -->
 <section class="slide" data-title="책">
-  <header class="hd"><p class="kicker">제품 ⑤ What — 무엇이 남는가</p><h2 class="h2">AI가 쓰고 사람이 확인한 것은, 한 권의 책으로 남습니다</h2></header>
+  <header class="hd"><p class="kicker">What ② 무엇이 남나</p><h2 class="h2">AI가 쓰고 사람이 확인한 것은, 한 권의 책으로</h2></header>
   <div class="bookwrap">
     <div class="steps3">
       <div class="s"><span class="who3" style="background:var(--accent-2)">AI</span><b>초안을 쓴다</b></div>
       <div class="dn">→</div>
       <div class="s"><span class="who3" style="background:var(--good)">사람</span><b>확인한다</b></div>
       <div class="dn">→</div>
-      <div class="s bk"><span class="who3" style="background:var(--accent)">책</span><b>한 권으로 묶인다</b><span>8단계 = 8장</span></div>
+      <div class="s bk"><span class="who3" style="background:var(--accent)">책</span><b>한 권으로</b><span>8단계 = 8장</span></div>
     </div>
     <div class="book spread">
       <span class="ribbon">V.3</span>
-      <p class="pt">정한 것과 까닭 — 단계마다 V.1 · V.2 · V.3로 쌓인다</p>
+      <p class="pt">단계를 마칠 때마다 V.1 · V.2 · V.3</p>
       <figure class="img-frame"><img src="deck/shots/bk-spread.jpg" alt="README 책 — 동아리 행사 등록 앱, V.1 · V.2 · V.3과 1단계에서 정한 것 · 까닭"></figure>
     </div>
   </div>
-  <div class="deck-footer"><span class="who">Floe · 0:38 · 누적 7:11 · 이재엽</span><span class="slide-number" data-current="13" data-total="18"></span></div>
-  <aside class="notes"><p><em>(발표: 이재엽)</em></p><p>그럼 Floe를 쓰면 무엇이 남을까요. (위 줄) AI가 초안을 쓰고, 사람이 확인한 것이 한 권의 책으로 묶입니다.</p><p>(책) Floe에서 사용자가 지나간 경로를 각 단계별 결정사항을 모아서 8장의 책으로 만들어 줍니다.</p><p>그리고 8단계 과정이 마무리될 때마다 업데이트 사항을 반영하여 버전이 V.1, V.2, V.3으로 쌓이게 됩니다. 칸마다 생각, 작업, 결정사항, 개념학습, 다음 할 일이 남습니다. 이렇게 작업물이 버전업을 할 수 있도록 하였습니다.</p><p>이 책이 자신의 GitHub에 남아, 다 만든 뒤에도 "왜 이렇게 만들었나요?"에 답할 수 있습니다.</p></aside>
+  <div class="deck-footer"><span class="who">Floe · 0:30 · 누적 7:10 · 이재엽</span><span class="slide-number" data-current="16" data-total="19"></span></div>
+  <aside class="notes"><p><em>(발표: 이재엽 · 0:30 · 누적 7:10)</em></p><p>그럼 Floe를 쓰면 무엇이 남을까요. (위 줄) <strong>AI가 초안을 쓰고, 사람이 확인한 것이 한 권의 책으로 묶입니다.</strong></p><p>(책) Floe는 사용자가 지나온 단계마다 정한 것을 모아 8장짜리 책으로 만들어 줍니다.</p><p>단계를 마칠 때마다 바뀐 것을 반영해 V.1, V.2, V.3으로 버전이 쌓이고, 칸마다 생각, 작업, 결정, 배운 개념, 다음 할 일이 남습니다. ▶</p></aside>
 </section>
 
-
-<section class="slide" style="--zoom:1.6" data-title="사업 ① 고객">
-  <style>
-    .slide[data-title^="사업"] .src{font-size:18px;margin-top:18px}
-    .bz{display:grid;gap:26px}
-    .bz.c2{grid-template-columns:1fr 1.25fr}
-    .bz.c3{grid-template-columns:1fr 1fr 1.2fr}
-    .bz.c3 .num,.bz.arrow .num{font-size:54px}
-    .bz.c4{grid-template-columns:repeat(4,1fr);gap:18px}
-    .bz.arrow{grid-template-columns:1fr auto 1fr auto 1fr;gap:14px;align-items:stretch}
-    .bz>div{background:var(--surface);border:1px solid var(--border);border-radius:18px;box-shadow:var(--shadow);padding:28px 30px;word-break:keep-all}
-    .bz>div.main{border:3px solid var(--accent);background:color-mix(in srgb,var(--accent) 7%,var(--surface))}
-    .bz>div.got{border:3px solid var(--good)}
-    .bz>i{align-self:center;font-style:normal;font-size:40px;font-weight:800;color:var(--accent)}
-    .bz h4{margin:0 0 10px;font-size:25px;color:var(--text-2);font-weight:800;line-height:1.3}
-    .bz .num{margin:0;font-size:62px;font-weight:800;color:var(--accent);line-height:1.12;white-space:nowrap}
-    .bz .got .num{color:var(--good)}
-    .bz .sub{margin:10px 0 0;font-size:29px;line-height:1.35;color:var(--text-1)}
-    .bz .big{margin:0;font-size:34px;line-height:1.45;color:var(--text-1)}
-    .bz b{color:var(--accent)}
-    .bz .when{display:inline-block;font-size:22px;font-weight:800;color:#fff;background:var(--accent);border-radius:999px;padding:4px 16px;margin-bottom:14px}
-    .bz .got .when{background:var(--good)}
-    .bz .step{margin:0;font-size:36px;font-weight:800;color:var(--text-1);line-height:1.25}
-    .bzline{margin-top:26px;padding:22px 30px;border-radius:16px;border:2px solid var(--accent);background:color-mix(in srgb,var(--accent) 8%,var(--surface));font-size:32px;font-weight:700;color:var(--text-1);word-break:keep-all}
-    .bzline b{color:var(--accent)}
-    .bzline.risk{border:2px dashed var(--warn);background:var(--surface);display:flex;align-items:center;gap:16px;flex-wrap:wrap}
-    .bzline .lb{font-size:21px;font-weight:800;color:#fff;background:var(--warn);border-radius:999px;padding:4px 16px}
-    .bzline .lb.ok{background:var(--accent);margin-left:18px}
-    .bzsteps{display:flex;align-items:center;gap:16px;margin-top:12px;font-size:30px;font-weight:700;color:var(--text-1)}
-    .bzh{margin:30px 0 0;font-size:25px;font-weight:800;color:var(--text-2)}
-    .bzsteps>*{flex:none;white-space:nowrap}
-    .bzsteps span{background:var(--surface);border:1px solid var(--border);border-radius:999px;padding:10px 24px;box-shadow:var(--shadow)}
-    .bzsteps span.on{background:color-mix(in srgb,var(--accent) 10%,var(--surface));border-color:var(--accent)}
-    .bzsteps i{font-style:normal;color:var(--accent);font-weight:800}
-    .slide.is-active[data-title^="사업"] .bz>div{animation:a-up .45s both}
-    .slide.is-active[data-title^="사업"] .bz>div:nth-of-type(1){animation-delay:.25s}
-    .slide.is-active[data-title^="사업"] .bz>div:nth-of-type(2){animation-delay:.7s}
-    .slide.is-active[data-title^="사업"] .bz>div:nth-of-type(3){animation-delay:1.15s}
-    .slide.is-active[data-title^="사업"] .bz>div:nth-of-type(4){animation-delay:1.6s}
-    .slide.is-active[data-title^="사업"] .bzline,.slide.is-active[data-title^="사업"] .bzsteps,.slide.is-active[data-title^="사업"] .bzh{animation:a-up .48s both 2s}
-  </style>
-  <header class="hd"><p class="kicker">사업성 ① 고객과 가격</p><h2 class="h2">돈을 내는 고객은 강사와 교육기관입니다</h2></header>
-  <div class="bz c2">
-    <div><h4>개인 사용자</h4><p class="num">무료</p><p class="sub">Floe를 알리는 통로</p></div>
-    <div class="main"><h4>강사 · 교육기관</h4><p class="num">1인 · 과정당 1만 원</p><p class="sub">30명 반 하나 = 30만 원</p></div>
+<!-- 17 협업 — → 한 번에 한 단계: Jira → 아이디어 → 프리 프로토타입 → 프로토타입 → 시연 → 결과 → (18장) -->
+<section class="slide" data-title="협업 과정">
+  <header class="hd"><p class="kicker">협업 — 목적 · 역할 · Jira</p><h2 class="h2">목적마다 일을 나눠, 이렇게 준비했습니다</h2></header>
+  <div class="collab3">
+    <div class="tour" data-steps="key">
+      <div class="rail"><div class="st"><i>1</i><span>아이디어</span><b>9월</b></div><div class="st"><i>2</i><span>프리 프로토타입</span><b>10/12 ~ 10/25</b></div><div class="st"><i>3</i><span>프로토타입</span><b>10/26 ~ 11/1</b></div><div class="st"><i>4</i><span>시연</span><b>11/2 ~ 11/7</b></div><div class="st"><i>5</i><span>결과</span><b>11/7</b></div></div>
+      <div class="cumrow"><div class="cum"><div class="cum-bar"><i></i></div><span class="cum-l">Floe가 자란 만큼 <b></b></span></div><div class="shelf"><span><i>1</i>방향 전환</span><span><i>2</i>8단계 흐름</span><span><i>3</i>앱 11.0</span><span><i>4</i>앱 11.3 · 영상</span><span><i>5</i>최종 앱 · 책</span></div></div>
+      <div class="view"><div class="trk">
+        <article class="c2 intro" data-cum="0" data-vlabel="Jira로 나눔"><div class="lhs"><p class="stg">Jira</p><p class="dt">5종목 · 작업 76개 · PR 358개</p><p class="gl">목적과 달성 조건부터 적었다</p><span class="res">PR마다 Jira 번호</span><div class="ps"><div class="p"><div class="nm">이재엽</div><div class="tx">총괄 · AI</div></div><div class="p"><div class="nm">고한결</div><div class="tx">인터뷰 · 설문 · 사용자 테스트</div></div><div class="p"><div class="nm">임유정</div><div class="tx">시연 화면 · 코드 점검</div></div><div class="p"><div class="nm">두승현</div><div class="tx">작업실 개편 · 검증</div></div></div></div><div class="big one"><figure class="jira"><img src="deck/shots/jira-timeline.png" alt="Jira 타임라인 — 에픽 KAN-25 ~ 29, 일감마다 담당자"><figcaption>Jira 타임라인</figcaption></figure></div></article>
+        <article class="c2" data-cum="20" data-vlabel="1 / 5 · 아이디어"><div class="lhs"><p class="stg">아이디어</p><p class="dt">9월</p><p class="gl">게임 → 길잡이</p><span class="res">재미보다 '목적'과 '다음'</span></div><div class="big one game"><figure class=""><img src="deck/shots/evo-1-rpg.png" alt="첫 구상 — 게임처럼 싸우며 배운다"><figcaption>첫 구상 — 게임처럼 싸우며 배운다</figcaption></figure></div></article>
+        <article class="c2" data-cum="40" data-vlabel="2 / 5 · 프리 프로토타입"><div class="lhs"><p class="stg">프리 프로토타입</p><p class="dt">10/12 ~ 10/25</p><p class="gl">흐름을 그리고, 멘토링으로 고침</p><span class="res">8단계로 준비</span></div><div class="big two"><figure class=""><img src="deck/shots/evo-2a-library.jpg" alt="10/17 시안 — 도서관 장면"><figcaption>도서관 시안</figcaption></figure><figure class=""><img src="deck/shots/evo-2b-map.jpg" alt="10/17 흐름 — 단계 지도 · 마감 · 돌아보기"><figcaption>단계 지도</figcaption></figure></div></article>
+        <article class="c2" data-cum="60" data-vlabel="3 / 5 · 프로토타입"><div class="lhs"><p class="stg">프로토타입</p><p class="dt">10/26 ~ 11/1</p><p class="gl">핵심 기능만 만들기</p><span class="res">앱 11.0</span></div><div class="big three"><figure class=""><img src="deck/shots/evo-3a-mock.webp" alt="10/28 작업실 시안"><figcaption>작업실 시안</figcaption></figure><span class="ar">→</span><figure class=""><img src="deck/shots/workspace.webp" alt="작업실 — 흐름도 캔버스"><figcaption>작업실</figcaption></figure><span class="ar">→</span><figure class=""><img src="deck/shots/f3-quest.png" alt="11/1 앱 11.0 — 퀘스트"><figcaption>앱 11.0 퀘스트</figcaption></figure></div></article>
+        <article class="c2" data-cum="80" data-vlabel="4 / 5 · 시연"><div class="lhs"><p class="stg">시연</p><p class="dt">11/2 ~ 11/7</p><p class="gl">AI 연동부터 지도까지 끊김 없이</p><span class="res">앱 11.3 · 시연 영상</span></div><div class="big six"><figure class=""><img src="deck/shots/f1-setup.webp" alt="① 설치 · 연결"><figcaption>① 설치</figcaption></figure><figure class=""><img src="deck/shots/demo-02-idea.jpg" alt="② 아이디어 한 단락"><figcaption>② 아이디어</figcaption></figure><figure class=""><img src="deck/shots/f2-stage1-draft.jpg" alt="③ 초안 → 확인"><figcaption>③ 초안</figcaption></figure><figure class=""><img src="deck/shots/f4-gate.webp" alt="④ 관문"><figcaption>④ 관문</figcaption></figure><figure class=""><img src="deck/shots/f5-approve.webp" alt="⑤ 맡기기 · 허락"><figcaption>⑤ 허락</figcaption></figure><figure class=""><img src="deck/shots/demo-07-map.jpg" alt="⑥ 지금 어디, 다음은"><figcaption>⑥ 지도</figcaption></figure></div></article>
+        <article class="c2" data-cum="100" data-vlabel="5 / 5 · 결과"><div class="lhs"><p class="stg">결과</p><p class="dt">11/7</p><p class="gl">목적 → 관문 → 까닭</p><span class="res">최종 앱 · 한 권의 책</span></div><div class="big one shot1"><figure class=""><img src="deck/shots/notebook.webp" alt="남은 책 — 단계마다 정한 것"><figcaption>남은 책</figcaption></figure></div></article>
+      </div></div>
+    </div>
   </div>
-  <div class="bzline">AI 비용은 <b>사용자의 Claude Code</b>에서 → 저희 원가는 <b>서버 비용만</b></div>
-  <p class="src">가격 · 인원은 초기 가정 · Floe 사업계획서 3-1</p>
-  <div class="deck-footer"><span class="who">Floe · 0:45 · 누적 7:56 · 이재엽</span><span class="slide-number" data-current="14" data-total="18"></span></div>
-  <aside class="notes"><p><em>(발표: 이재엽)</em></p><p><strong>(고객과 가격)</strong> Floe의 고객은 둘입니다. 개인 사용자는 서버 기능을 제외하고 무료로 씁니다. 서버가 필요한 기능만, AWS처럼 쓴 만큼 이용료를 받아 서버 비용을 감당합니다.</p><p><strong>돈을 내는 고객은 강사와 교육기관</strong>입니다. 강사는 학생 한 명 한 명이 8단계 중 어디서 막혔는지 한 화면에서 봅니다. 가격은 수강생 1인당 과정당 1만 원입니다.</p><p>30명 반 하나면 한 과정에 30만 원입니다. 강사가 막힌 학생을 일일이 찾아다니는 시간을 줄여 주는 값입니다.</p><p>그리고 AI 비용은 사용자의 Claude Code에서 나갑니다. 그래서 수강생이 늘어도 저희 원가는 서버 비용만 늘어납니다.</p></aside>
+  <div class="deck-footer"><span class="who">Floe · 1:40 · 누적 8:50 · 이재엽</span><span class="slide-number" data-current="17" data-total="19"></span></div>
+  <aside class="notes"><p><em>(발표: 이재엽 · 1:40 · 누적 8:50)</em> (→ 한 번에 한 단계. 말을 마치면 →를 누른다. 청중 화면 창에서 누를 것 — →를 6번.)</p><p><strong>큰 틀 · Jira (32초):</strong> 이어서 저희가 어떻게 일했는지 말씀드리겠습니다. 저희는 프로젝트 관리로 Jira를 사용했습니다. 일정을 5종목으로 나눴고, 각 종목을 시작하기 전에 목적과 달성 조건부터 적었습니다. 그 아래 작업 76개를 네 명이 나눠 맡았습니다. 저는 총괄과 AI, 고한결은 인터뷰와 설문, 사용자 테스트, 임유정은 시연 화면과 코드 점검, 두승현은 작업실 개편과 검증을 맡았습니다. 코드는 GitHub PR 358개로 합쳤고, PR에 Jira 번호를 달아 누가 무엇을 했는지 남겼습니다. 일은 다섯 단계로 진행했습니다. →</p><p><strong>① 아이디어 (11초):</strong> 9월 첫 구상은 화면과 같이 <strong>게임처럼 싸우며 배우는 그림</strong>이었습니다. 하지만 저희가 풀 문제는 재미가 아니라 '목적'과 '다음'을 알게 하는 것이어서, 길잡이로 방향을 바꿨습니다. →</p><p><strong>② 프리 프로토타입 (16초):</strong> 도서관 시안과 단계 지도로 흐름을 그리고, 멘토링 도움을 받아 작업의 흐름과 부족한 부분들을 고쳤습니다. 그래서 이번 프로젝트도 Floe처럼 8단계로 준비하면서, 흐름에서 이해하지 못한 부분들을 잡아 나갔습니다. →</p><p><strong>③ 프로토타입 (10초):</strong> 완성도를 높이기 위해 핵심 기능들만 있는 프로토타입을 만들어 시연을 준비하였습니다. →</p><p><strong>④ 시연 (12초):</strong> 시연은 진짜 AI 연동부터 지도까지 끊기지 않는지 확인했고, 나온 문제를 하나씩 고쳐 실제 사용이 가능한 시연 버전이 완성되었습니다. →</p><p><strong>⑤ 결과와 결론 (22초):</strong> 마지막으로, 코디세이의 문제를 해결하고 싶은 마음에서 출발한 이야기가, 이제 사람과 함께 작업하고 문제를 해결할 수 있는 최종 앱으로 완성되었습니다. <strong>목적을 먼저 정하고, 관문을 넘고, 까닭을 남기는 것.</strong> 이것이 저희가 나타내고 싶은 목적입니다. ▶</p></aside>
 </section>
 
-
-<section class="slide" style="--zoom:1.4" data-title="사업 ② 시장">
-  <header class="hd"><p class="kicker">사업성 ② 시장 · 첫 고객</p><h2 class="h2">시장은 수강생 수부터 계산했습니다</h2></header>
-  <div class="bz arrow">
-    <div><h4>K-디지털 트레이닝 57,689명 × 1만 원</h4><p class="num">약 5.8억 원</p></div><i>→</i>
-    <div><h4>AI 코딩 도구를 쓰는 과정 20% (가정)</h4><p class="num">약 1.15억 원</p></div><i>→</i>
-    <div class="main"><h4>첫 2년 목표 · 대전 · 충청 5곳 · 600명</h4><p class="num">600만 원</p></div>
-  </div>
-  <p class="bzh">첫 고객은 영업이 아니라 시범으로</p>
-  <div class="bzsteps"><span class="on">무료 시범 한 반</span><i>→</i><span>다음 과정부터 유료</span><i>→</i><span>대전 KDT 기관 · 대학 강사</span></div>
-  <p class="src">57,689명: 고용노동부 2024.04 발표 훈련 규모(실제 수강 인원 아님) · 20% · 5곳 · 600명은 가정 · 목표</p>
-  <div class="deck-footer"><span class="who">Floe · 1:02 · 누적 8:58 · 이재엽</span><span class="slide-number" data-current="15" data-total="18"></span></div>
-  <aside class="notes"><p><em>(발표: 이재엽)</em></p><p><strong>(시장)</strong> 시장은 수강생 수부터 계산했습니다. 정부 K-디지털 트레이닝 한 곳만 해도 2024년 한 해 약 5만 7천 명을 교육할 수 있는 규모입니다. 여기에 1인당 1만 원을 곱하면 <strong>약 5억 8천만 원</strong>입니다.</p><p>그중 AI 코딩 도구를 수업에 쓰는 과정을 20%로 잡으면 약 1억 1,500만 원입니다.</p><p>첫 2년 목표는 대전·충청 교육기관 5곳, 20개 반, 약 600명으로 600만 원입니다. 대학 SW 교과와 민간 부트캠프는 아직 넣지 않은 보수적인 숫자입니다.</p><p><strong>(첫 고객을 데려오는 방법)</strong> 첫 고객은 영업이 아니라 시범으로 만듭니다. 한 반을 무료로 운영하고, 결과를 보고 다음 과정부터 유료로 전환합니다. 같은 방식으로 대전 지역 K-디지털 트레이닝 기관과 대학 강사에게 넓혀 갑니다. 개인 무료 사용자 중 강사인 분들도 자연스럽게 기관 고객으로 이어집니다.</p></aside>
+<!-- 18 앞으로 — 사업계획서대로 -->
+<section class="slide" style="--zoom:1.1" data-title="사업 계획">
+  <header class="hd"><p class="kicker">앞으로 — 사업계획서대로</p><h2 class="h2">혼자 쓰는 길잡이에서, 수업의 길잡이로</h2></header>
+  <p class="biz-h">누구에게 · 얼마에</p>
+  <table class="biz big">
+    <thead><tr><th>대상</th><th>드리는 것</th><th>비용</th></tr></thead>
+    <tbody>
+      <tr><td>개인 사용자</td><td>기본 기능</td><td class="goal">무료 · 서버 기능만 쓴 만큼</td></tr>
+      <tr><td>강사 · 교육기관</td><td>학생이 막힌 곳 보기</td><td class="goal">1인 · 과정당 1만 원</td></tr>
+    </tbody>
+  </table>
+  <p class="biz-h" style="margin-top:26px">어떻게 나아가나 — 관문으로</p>
+  <table class="biz big">
+    <thead><tr><th>관문</th><th>시기</th><th>통과 기준</th></tr></thead>
+    <tbody>
+      <tr><td><span class="gate">1</span>사용자 테스트</td><td>2026.11</td><td class="goal">5명 중 4명 · 3명 만족</td></tr>
+      <tr><td><span class="gate">2</span>무료 시범</td><td>2026.12</td><td class="goal">코디세이 수업 한 반</td></tr>
+      <tr><td><span class="gate">3</span>첫 유료 과정</td><td>2027 1분기</td><td class="goal">상반기 교육기관 3곳</td></tr>
+    </tbody>
+  </table>
+  <p class="src">TAM 1억 · SAM 2,000만 · SOM 180만 원 — 모두 초기 가정</p>
+  <div class="deck-footer"><span class="who">Floe · 0:50 · 누적 9:40 · 이재엽</span><span class="slide-number" data-current="18" data-total="19"></span></div>
+  <aside class="notes"><p><em>(발표: 이재엽 · 0:50 · 누적 9:40)</em> (위 표가 한 줄씩, 아래 관문이 하나씩 나온다.)</p><p>앞으로는 사업계획서대로 갑니다. (위 표) 대상은 둘입니다.</p><p><strong>개인 사용자는 기본 기능을 무료로 씁니다. 서버가 필요한 기능만, AWS처럼 쓴 만큼 이용료를 받아 서버 비용을 감당합니다.</strong></p><p><strong>강사와 교육기관에는 학생이 어디서 막혔는지 보이는 장치를 드립니다. 수강생 1인, 과정당 1만 원이고, 학습용 도메인 서버도 함께 제공할 예정입니다.</strong></p><p>(아래 표) 11월에는 5명 사용자 테스트를 합니다. 바이브코딩 과정에서 5명 중 4명, 발표 과정에서 5명 중 3명이 만족하면 다음 단계로 갑니다.</p><p>12월에는 코디세이 교육장 수업 한 반에서 무료 시범을 합니다. 강사님께 이미 약속을 받았습니다. 2027년 1분기에 첫 유료 과정을 열고, 상반기 안에 교육기관 3곳과 계약하는 것이 목표입니다.</p><p>시장을 예상하자면 TAM 1억 · SAM 2,000만 · SOM 180만 원이고, 모두 <strong>초기 가정</strong>입니다. ▶</p></aside>
 </section>
 
-
-<section class="slide" style="--zoom:1.38" data-title="사업 ③ 경쟁">
-  <header class="hd"><p class="kicker">사업성 ③ 경쟁과 강점 · 리스크</p><h2 class="h2">Claude Code · Cursor가 이 기능을 넣으면?</h2></header>
-  <div class="bz c3">
-    <div><h4>하는 일이 다릅니다</h4><p class="big">코딩 도구 = <b>코드</b><br>Floe = <b>과정과 기록</b></p></div>
-    <div><h4>수업이 쌓일수록</h4><p class="big"><b>'책'</b>과 <b>막힌 자리</b><br>데이터가 쌓입니다</p></div>
-    <div class="main"><h4>토큰 예측 · 비교 사례 1건</h4><p class="num">100만 → 52만</p></div>
-  </div>
-  <div class="bzline risk"><span class="lb">리스크</span>Claude Code에만 의존<span class="lb ok">대응</span><span><b>2027년 상반기</b> 다른 AI 코딩 도구 연동 (계획)</span></div>
-  <p class="src">토큰 100만 · 52만은 예측 · 추정값 — 근거: github.com/gamercross/Final-Proj-Result/tree/main/estimate</p>
-  <div class="deck-footer"><span class="who">Floe · 0:47 · 누적 9:45 · 이재엽</span><span class="slide-number" data-current="16" data-total="18"></span></div>
-  <aside class="notes"><p><em>(발표: 이재엽)</em></p><p><strong>(경쟁과 강점)</strong> Claude Code나 Cursor가 이 기능을 넣으면 어떻게 될까요? 그 도구들은 코드를 빨리 만드는 데 집중합니다. Floe는 사람이 이해하고 넘어가는 과정과 그 기록을 만듭니다.</p><p>수업이 쌓일수록 학생들의 '책'과 어디서 막혔는지에 대한 데이터가 쌓이고, 그 데이터가 강사용 기능을 더 정확하게 만듭니다.</p><p>앞에서 보신 비교에서는 같은 앱을 만드는 데 토큰이 약 100만에서 52만으로 줄 것으로 예측했습니다. <strong>한 건의 사례에서 낸 예측</strong>이지만, 비용을 절반 가까이 줄일 수 있다는 뜻입니다.</p><p><strong>(리스크와 대응)</strong> 지금은 Claude Code 위에서 동작합니다. 한 도구에만 기대지 않도록 2027년 상반기까지 다른 AI 코딩 도구 연동을 추가할 계획입니다.</p></aside>
-</section>
-
-
-<section class="slide" style="--zoom:1.4" data-title="사업 ④ 검증">
-  <header class="hd"><p class="kicker">사업성 ④ 검증과 로드맵 · 지원금</p><h2 class="h2">12월 무료 시범, 강사 약속을 받았습니다</h2></header>
-  <div class="bz c4">
-    <div><span class="when">2026.11</span><p class="step">사용자 테스트</p><p class="sub">5명 중 완주 4 · 설명 3</p></div>
-    <div class="got"><span class="when">2026.12</span><p class="step">무료 시범</p><p class="sub">코디세이 한 반 · <b style="color:var(--good)">강사 약속 ✓</b></p></div>
-    <div><span class="when">2027 1분기</span><p class="step">첫 유료 과정</p></div>
-    <div><span class="when">2027 상반기</span><p class="step">교육기관 3곳</p></div>
-  </div>
-  <p class="bzh">지원을 받는다면</p>
-  <div class="bzsteps"><span class="on">강사용 대시보드 개발</span><span class="on">서버 운영</span><span class="on">시범 수업 운영</span></div>
-  <p class="src">2027년 일정 · 3곳은 계획 · 목표</p>
-  <div class="deck-footer"><span class="who">Floe · 0:36 · 누적 10:21 · 이재엽</span><span class="slide-number" data-current="17" data-total="18"></span></div>
-  <aside class="notes"><p><em>(발표: 이재엽)</em></p><p><strong>(검증과 로드맵)</strong> 11월에는 5명 사용자 테스트를 합니다. 바이브코딩 과정에서 5명 중 4명, 발표 과정에서 5명 중 3명이 만족하면 다음 단계로 갑니다.</p><p>12월에는 코디세이 교육장 수업 한 반에서 무료 시범을 합니다. <strong>강사님께 이미 약속을 받았습니다.</strong> 2027년 1분기에 첫 유료 과정을 열고, 상반기 안에 교육기관 3곳과 계약하는 것이 목표입니다.</p><p><strong>(지원금 사용 계획)</strong> 지원을 받는다면 강사용 대시보드 개발, 서버 운영, 시범 수업 운영에 쓰겠습니다.</p></aside>
-</section>
-
-
+<!-- 19 마무리 -->
 <section class="slide center tc" style="--zoom:1.1" data-title="마무리">
   <div class="endw">
     <img class="endimg" src="deck/shots/floro.svg" alt="길잡이 물범 플로로">
     <h1 class="h1"><span class="gradient-text">AI가 일하는 시대에도,<br>성장하는 건 사람이어야 합니다</span></h1>
-    <p class="lede mt-l" style="margin-left:auto;margin-right:auto">Floe는 결과물만이 아니라, 그것을 만든 "나"를 남깁니다.</p>
-    <p class="dim mt-l" style="font-size:21px">github.com/2026-Codyssey-Final-Proj &nbsp;·&nbsp; app-v11.3.0 · Mac · Windows · Ubuntu</p>
+    <p class="dim mt-l" style="font-size:21px">github.com/2026-Codyssey-Final-Proj</p>
     <p class="dim mt-m" style="font-size:22px">감사합니다.</p>
   </div>
-  <div class="deck-footer"><span class="who">Floe · 0:10 · 누적 10:31 · 이재엽</span><span class="slide-number" data-current="18" data-total="18"></span></div>
-  <aside class="notes"><p><em>(발표: 이재엽)</em></p><p>AI가 일하는 시대에도, 성장하는 건 사람이어야 합니다. 감사합니다.</p></aside>
+  <div class="deck-footer"><span class="who">Floe · 0:20 · 누적 10:00 · 이재엽</span><span class="slide-number" data-current="19" data-total="19"></span></div>
+  <aside class="notes"><p><em>(발표: 이재엽 · 0:20 · 누적 10:00)</em></p><p><strong>AI가 일하는 시대에도, 성장하는 건 사람이어야 합니다.</strong></p><p>Floe 발표를 들어 주셔서 감사합니다.</p><p><em>(질문이 오면 말로 60초 안에 — 결론 한 줄, 근거 하나, 가리킬 장.)</em></p></aside>
 </section>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 </div>
 <script src="deck/assets/runtime.js"></script>
