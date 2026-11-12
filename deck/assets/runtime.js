@@ -247,7 +247,7 @@
 
         const title = s.getAttribute('data-title') ||
           (s.querySelector('h1,h2,h3')||{}).textContent || ('Slide '+(i+1));
-
+        
         // Create a container for the mini-slide
         const mini = document.createElement('div');
         mini.className = 'mini-slide';
@@ -259,7 +259,7 @@
         mini.style.transformOrigin = 'top left';
         mini.style.pointerEvents = 'none';
         mini.style.background = 'var(--bg)';
-
+        
         // Clone the slide content
         const clone = s.cloneNode(true);
         clone.className = 'slide is-active'; // force active styles
@@ -268,7 +268,7 @@
         clone.style.transform = 'none';
         clone.style.opacity = '1';
         clone.style.padding = '72px 96px'; // ensure padding is kept
-
+        
         mini.appendChild(clone);
         t.appendChild(mini);
 
@@ -280,7 +280,7 @@
         overlay.style.color = '#fff';
         overlay.style.zIndex = '10';
         overlay.style.pointerEvents = 'none';
-
+        
         const n = document.createElement('div');
         n.className = 'n';
         n.textContent = i + 1;
@@ -291,7 +291,7 @@
         n.style.fontSize = '16px';
         n.style.color = '#fff';
         n.style.textShadow = '0 1px 4px rgba(0,0,0,0.8)';
-
+        
         const text = document.createElement('div');
         text.className = 't';
         text.textContent = title.trim().slice(0,80);
@@ -303,7 +303,7 @@
         text.style.fontSize = '14px';
         text.style.color = '#fff';
         text.style.textShadow = '0 1px 4px rgba(0,0,0,0.8)';
-
+        
         overlay.appendChild(n);
         overlay.appendChild(text);
         t.appendChild(overlay);

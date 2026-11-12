@@ -1,4 +1,4 @@
-/* claude-drafted: 2026-10-17 — 플로로의 그림 스타일과 움직임. 내비게이터 · 서고 · 지식 은하가 같이 쓴다.
+<svg xmlns="http://www.w3.org/2000/svg" width="200" height="200" viewBox="0 0 200 200"><style><![CDATA[/* claude-drafted: 2026-10-17 — 플로로의 그림 스타일과 움직임. 내비게이터 · 서고 · 지식 은하가 같이 쓴다.
    app.css에 있던 꼬리 · 잠 · 살핌 · 깜짝을 옮기고, 물범다운 움직임(꼬리 흔들기 · 숨쉬기 · 지느러미 박수 · 헤엄 · 배로 통통)을 더했다.
    그림은 seal.js, 언제 움직이는지는 app.js(헤엄) · library.js(배로 통통).
    그림 스타일(색 · 표정 · 상태 표시)도 2026-10-17에 app.css · library.css의 같은 사본 둘을 여기 하나로 모았다.
@@ -107,7 +107,7 @@
   .m-work .s-code text { animation: work-code 1.8s ease-in-out infinite; }
   .m-work .s-code text:nth-child(2) { animation-delay: .35s; } .m-work .s-code text:nth-child(3) { animation-delay: .7s; }
 
-  /* 표정이 바뀌는 순간(F-154, 두승현 "애니메이션 변환시 연출이 자연스러웠으면") — 바뀐 직후의 그림에만 붙는 .mood-in · .from-옛표정으로 한 번만(app/10-views.js moodIn).
+  /* 표정이 바뀌는 순간(F-154, "애니메이션 변환시 연출이 자연스러웠으면") — 바뀐 직후의 그림에만 붙는 .mood-in · .from-옛표정으로 한 번만(app/10-views.js moodIn).
      ponytail: 움직이는 도중(0.9초 안)에 다시 그려지면 처음부터 다시 움직인다 — 눈에 띄면 경과 시간을 animation-delay로 넘긴다 */
   /* 눈 · 입은 스르르 뜨듯이, 머리 위 표시는 작게 솟아 나오고, 볼은 물들듯이 */
   .mood-in .c-eyes>* { transform-box: fill-box; transform-origin: center; animation: eye-in .2s ease-out; }
@@ -202,3 +202,50 @@ html[data-ui="hidden"] .cat *, html.page-hidden .cat * { animation-play-state: p
   70% { transform: translateY(-7px) scale(.97, 1.04); }
   82% { transform: scale(1.04, .96); }
 }
+]]></style><defs><linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#3A5FE0"/><stop offset="1" stop-color="#16226A"/></linearGradient></defs><rect width="200" height="200" rx="28" fill="url(#bg)"/><svg x="20" y="24" class="cat m-happy hole" width="160" height="160" viewBox="0 0 120 120" aria-hidden="true">
+      <defs><radialGradient id="fl1p" cy=".62"><stop offset=".35" stop-color="#16226A" stop-opacity=".9"></stop><stop offset="1" stop-color="#16226A" stop-opacity="0"></stop></radialGradient>
+      <linearGradient id="fl1w" x2="0" y2="1"><stop offset="0" stop-color="#5D86E6" stop-opacity=".95"></stop><stop offset="1" stop-color="#2A3B8C" stop-opacity=".8"></stop></linearGradient>
+      <clipPath id="fl1c"><rect x="-20" y="-40" width="160" height="150"></rect></clipPath></defs>
+    <ellipse class="h-pool" cx="60" cy="88" rx="58" ry="40" fill="url(#fl1p)"></ellipse>
+    <g class="h-stars"><circle cx="20" cy="74" r=".9"></circle><circle cx="100" cy="68" r="1.1"></circle><circle cx="92" cy="92" r=".7"></circle></g>
+    <g clip-path="url(#fl1c)"><g transform="translate(0 18) scale(1.12)"><g class="c-body"><defs><radialGradient id="fl1v" cx=".42" cy=".36" r=".68"><stop offset=".6" stop-color="#1A2350" stop-opacity="0"></stop><stop offset="1" stop-color="#1A2350" stop-opacity=".2"></stop></radialGradient>
+        <radialGradient id="fl1s"><stop offset="0" stop-color="#FFFFFF" stop-opacity=".85"></stop><stop offset="1" stop-color="#FFFFFF" stop-opacity="0"></stop></radialGradient></defs>
+      
+      <g class="c-head">
+        <path class="c-fur" d="M50 10 C66 10 78 21 80 38 C81 50 83 58 91 68 C100 79 102 96 94 106 C87 114 73 115 57 115 C39 115 27 112 22 103 C17 94 18 78 19 63 C20 47 20 31 26 21 C32 13 40 10 50 10 Z"></path>
+        <path class="c-shade" d="M80 38 C81 50 83 58 91 68 C100 79 102 96 94 106 C87 114 73 115 62 115 C80 108 90 96 87 82 C84 70 79 58 80 38 Z"></path>
+        <path class="c-vol" d="M50 10 C66 10 78 21 80 38 C81 50 83 58 91 68 C100 79 102 96 94 106 C87 114 73 115 57 115 C39 115 27 112 22 103 C17 94 18 78 19 63 C20 47 20 31 26 21 C32 13 40 10 50 10 Z" fill="url(#fl1v)"></path>
+        <ellipse class="c-shine" cx="36" cy="22" rx="12" ry="7" transform="rotate(-25 36 22)" fill="url(#fl1s)"></ellipse>
+        <path class="c-fin" d="M37 62 Q45 64 49 74 M62 59 Q54 64 49 74 M31 72 Q49 85 69 71"></path>
+        <g class="c-blush"><ellipse cx="33" cy="42" rx="4.2" ry="2.6"></ellipse><ellipse cx="66" cy="42" rx="4.2" ry="2.6"></ellipse></g>
+        <path class="c-whisk" d="M31 41 L22 39.5 M31 43.5 L22 44.5 M68 41 L77 39.5 M68 43.5 L77 44.5"></path>
+        <g class="c-eyes">
+          <g class="e-dot"><circle cx="39" cy="35" r="3.4"></circle> <circle cx="60" cy="35" r="3.4"></circle></g>
+          <g class="e-wide"><circle cx="39" cy="35" r="4.6"></circle><circle class="e-glint" cx="40.4" cy="33.4" r="1.4"></circle> <circle cx="60" cy="35" r="4.6"></circle><circle class="e-glint" cx="61.4" cy="33.4" r="1.4"></circle></g>
+          <g class="e-wow"><circle cx="39" cy="35" r="5.2"></circle><circle class="e-glint" cx="40.6" cy="33.2" r="1.7"></circle><circle class="e-glint" cx="37.4" cy="37" r=".8"></circle> <circle cx="60" cy="35" r="5.2"></circle><circle class="e-glint" cx="61.6" cy="33.2" r="1.7"></circle><circle class="e-glint" cx="58.4" cy="37" r=".8"></circle></g>
+          <path class="e-happy" d="M35.5 36.5 Q39 31.5 42.5 36.5 M56.5 36.5 Q60 31.5 63.5 36.5"></path>
+          <path class="e-closed" d="M35.5 34.5 Q39 38 42.5 34.5 M56.5 34.5 Q60 38 63.5 34.5"></path>
+          <path class="e-blink" d="M35.5 35 L42.5 35 M56.5 35 L63.5 35"></path>
+          <g class="e-work"><path d="M35.4 35.8 A3.6 3.6 0 0 0 42.6 35.8 Z"></path> <path d="M56.4 35.8 A3.6 3.6 0 0 0 63.6 35.8 Z"></path></g>
+          <g class="e-heart"><path d="M39 38.6 C34.6 35.6 34.6 31.6 37.4 31.6 C38.4 31.6 39 32.6 39 33.2 C39 32.6 39.6 31.6 40.6 31.6 C43.4 31.6 43.4 35.6 39 38.6 Z"></path> <path d="M60 38.6 C55.6 35.6 55.6 31.6 58.4 31.6 C59.4 31.6 60 32.6 60 33.2 C60 32.6 60.6 31.6 61.6 31.6 C64.4 31.6 64.4 35.6 60 38.6 Z"></path></g>
+          <g class="e-angry"><circle cx="39" cy="35.5" r="3.4"></circle> <circle cx="60" cy="35.5" r="3.4"></circle><path d="M34 28.5 L43 31.5 M65 28.5 L56 31.5"></path></g>
+        </g>
+        <g class="c-snout">
+          <path class="c-nose" d="M47.3 39.2 Q49.5 38.2 51.7 39.2 Q50.8 41.6 49.5 41.8 Q48.2 41.6 47.3 39.2 Z"></path>
+          <path class="c-mouth" d="M49.5 41.8 L49.5 43.4 M46 43 Q47.7 45.3 49.5 43.4 Q51.3 45.3 53 43"></path>
+          <ellipse class="c-open" cx="49.5" cy="45" rx="1.8" ry="2.4"></ellipse>
+        </g>
+        
+        <g class="c-lap"><ellipse class="lap-l" cx="28.5" cy="59" rx="5.5" ry="2.6" transform="rotate(14 28.5 59)"></ellipse><ellipse class="lap-r" cx="69.5" cy="59" rx="5.5" ry="2.6" transform="rotate(-14 69.5 59)"></ellipse><g class="lap-top"><path class="lap-lid" d="M28.5 49 Q28.3 47 30.3 47 H67.7 Q69.7 47 69.5 49 L67.3 65 H30.7 Z"></path><text class="lap-mark" x="49" y="58.6">&lt;/&gt;</text></g><path class="lap-base" d="M30.5 65 H67.5 Q68.6 65 68.6 66 Q68.6 67.2 67.4 67.2 H30.6 Q29.4 67.2 29.4 66 Q29.4 65 30.5 65 Z"></path></g>
+      </g>
+      </g></g></g>
+    <path class="h-water" d="M4 100 Q60 92 116 100 Q110 117 60 118 Q10 117 4 100 Z" fill="url(#fl1w)"></path>
+    <path class="h-line" d="M14 100 Q60 93 106 100"></path><path class="h-ripple" d="M30 106 Q44 104 52 106 M66 108 Q78 106 90 108"></path><g transform="translate(-2 12)"><g class="s-dots"><circle cx="84" cy="26" r="2.2"></circle><circle cx="90" cy="18" r="3"></circle><circle cx="97" cy="9" r="3.8"></circle></g>
+      <path class="s-spark" d="M97 2 L99.5 10 L107 12.5 L99.5 15 L97 23 L94.5 15 L87 12.5 L94.5 10 Z"></path>
+      <text class="s-q" x="82" y="27">?</text>
+      <g class="s-code"><text x="80" y="29">{ }</text><text x="86" y="18">&lt;/&gt;</text><text x="94" y="8">;</text></g>
+      <g class="s-bang"><circle cx="94" cy="16" r="8"></circle><path d="M94 11 L94 17.5"></path><circle cx="94" cy="21" r="1.6"></circle></g>
+      <path class="s-heart" d="M84 15 C84 10 91 10 91 15 C91 10 98 10 98 15 C98 21 91 24 91 27 C91 24 84 21 84 15 Z"></path>
+      <g class="s-zzz"><text x="80" y="28">z</text><text x="87" y="18">z</text><text x="95" y="7">z</text></g>
+      <path class="s-sweat" d="M80 20 Q76.5 27 80 30 Q83.5 27 80 20 Z"></path>
+      <g class="s-bub"><circle cx="50" cy="100" r="2"></circle><circle cx="60" cy="104" r="1.4"></circle><circle cx="43" cy="105" r="1.6"></circle></g><g class="s-sign"><path class="sg-pole" d="M22 70 L22 104"></path><circle class="sg-board" cx="22" cy="62" r="13"></circle><path class="sg-x" d="M16 56 L28 68 M28 56 L16 68"></path></g></g></svg></svg>
